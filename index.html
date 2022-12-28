@@ -124,16 +124,24 @@
             <li>Партнери</li>
         </ul>
     </nav>
+
     
+    <div class="navigation">
+        <a  href="#1" class="active"></a>
+        <a  href="#2"></a>
+        <a  href="#3"></a>
+        <a  href="#4"></a>
+    </div>
     
-    <div class="container">
-        <section class="section home-intro"><video autoplay muted loop 
+    <div class="wrapper">
+        <section id="1" class="section home-intro"><video autoplay muted loop 
             src="https://videos-cdn.readymag.com/5cfe1ca664162178d8215788/6393113422734a36c4f2edb3/e352ce82-2864-4dbb-9fda-e1053ccd6ff7.mp4"></video></section>
         
-        <section class="section "><h1>first</h1>
+        <section id="2" class="section section2">
+            <div class="smoke"></div>
         </section>
-        <section class="section"><h1>second</h1></section>
-        <section class="section"><h1>third</h1></section>
+        <section id="3" class="section"><h1>second</h1></section>
+        <section id="4" class="section"><h1>third</h1></section>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.21/jquery.scrollify.min.js"
         integrity="sha512-UyX8JsMsNRW1cYl8BoxpcamonpwU2y7mSTsN0Z52plp7oKo1u92Xqfpv6lOlTyH3yiMXK+gU1jw0DVCsPTfKew=="
@@ -179,6 +187,40 @@
 
         }
         
+    </script>
+    <script>
+        // Get all sections that have an ID defined
+const sections = document.querySelectorAll("section[id]");
+
+// Add an event listener listening for scroll
+window.addEventListener("scroll", navHighlighter);
+
+function navHighlighter() {
+
+  // Get current scroll position
+  let scrollY = window.pageYOffset;
+
+  // Now we loop through sections to get height, top and ID values for each
+  sections.forEach(current => {
+    const sectionHeight = current.offsetHeight;
+    const sectionTop = current.offsetTop - 50;
+    sectionId = current.getAttribute("id");
+
+    /*
+    - If our current scroll position enters the space where current section on screen is, add .active class to corresponding navigation link, else remove it
+    - To know which link needs an active class, we use sectionId variable we are getting while looping through sections as an selector
+    */
+    if (
+      scrollY > sectionTop &&
+      scrollY <= sectionTop + sectionHeight
+    ) {
+      document.querySelector(".navigation a[href*=" + "\"" + sectionId + "\"" +  "]").classList.add("active");
+    } else {
+      document.querySelector(".navigation a[href*=" + "\"" + sectionId + "\"" +  "]").classList.remove("active");
+    }
+  });
+}
+
     </script>
 </body>
 </html>
