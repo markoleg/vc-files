@@ -1,3 +1,89 @@
-li {
-    font-size: 100px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  /* scroll-snap-type: y mandatory; */
+  /* scroll-snap-type: y proximity; */
+  /* overflow-y: scroll; */
+  /* height: 100vh; */
+}
+header {
+  position: fixed;
+  padding: 40px 40px 0;
+  width: 100%;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav {
+  display: none;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+}
+nav.open {
+  display: flex;
+  background: #F5F5F5;
+  justify-content: center;
+  align-items: center;
+} 
+
+.brg.open svg line:nth-child(1){
+opacity: 0;
+transition: all .5s;
+}
+.brg.open svg line:nth-child(2){
+  transform: rotate(45deg) translate(6px, -17px);
+  transition: all 1s;
+}
+.brg.open svg line:nth-child(3){
+  transform: rotate(-45deg) translate(-7px, 2px);
+  transition: all 1s;
+}
+
+.logo-wrp{
+  width: 114px;
+}
+
+.brg {
+  cursor: pointer;
+}
+.brg svg line {
+  transition: all 1s;
+}
+.nav-white {
+  color: white;
+}
+.nav-white line {
+  stroke: white;
+}
+.nav-white path, .nav-white rect {
+  fill: white;
+}
+
+
+
+
+
+.home-intro{
+  position: relative;
+}
+video {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
