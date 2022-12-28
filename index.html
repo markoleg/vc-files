@@ -132,7 +132,18 @@
         <a  href="#3"></a>
         <a  href="#4"></a>
     </div>
+
+
+    <div class="social">
+        <a href="">FB</a>
+        <div class="divider">/</div>
+        <a href="">IN</a>
+        <div class="divider">/</div>
+        <a href="">TW</a>
+    </div>
     
+
+
     <div class="wrapper">
         <section id="1" class="section home-intro"><video autoplay muted loop 
             src="https://videos-cdn.readymag.com/5cfe1ca664162178d8215788/6393113422734a36c4f2edb3/e352ce82-2864-4dbb-9fda-e1053ccd6ff7.mp4"></video></section>
@@ -140,7 +151,7 @@
         <section id="2" class="section section2">
             <div class="smoke"></div>
         </section>
-        <section id="3" class="section"><h1>second</h1></section>
+        <section id="3" class="section section2"><div class="smoke"></div></section>
         <section id="4" class="section"><h1>third</h1></section>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.21/jquery.scrollify.min.js"
@@ -178,11 +189,14 @@
             var nav = document.getElementById("nav");
             var brg = document.getElementById("brg");
             var header = document.querySelector("header");
+            const social = document.querySelector(".social");
+
             nav.classList.toggle('open');
             brg.classList.toggle('open');
 
             if (window.scrollY==0) {
                 header.classList.toggle('nav-white');
+                social.classList.toggle('social-white');
             }
 
         }
