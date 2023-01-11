@@ -267,7 +267,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 50px 0 20px;
+  padding: 0 60px 0 20px;
 }
 
 
@@ -280,16 +280,7 @@ section {
   background-size: cover;
   background-attachment: fixed;
 }
-.smoke111 {
-  position: absolute;
-  z-index: 0;
-  background: url(static/smoke-33801.png);
-  background-repeat: no-repeat;
-  height: 100%;
-  width: 100%;
-  background-size: cover;
-  background-attachment: fixed;
-} */
+ */
 
 
 /* hero */
@@ -298,12 +289,14 @@ section {
   position: relative;
   height: 100vh;
 }
-video {
+.home-intro video {
   position: absolute;
   width: 100%;
   height: 100vh;
   object-fit: cover;
   z-index: -1;
+  top: 0;
+  left: 0;
 }
 .home-intro h1 {
   font-family: Almaz-Regular;
@@ -392,9 +385,10 @@ video {
   bottom: 40px;
   display: flex;
   gap: 12px;
-  align-items: center;
+  /* align-items: center; */
   font-family: Almaz-Medium;
   font-size: 15px;
+  text-transform: uppercase;
 }
 
 
@@ -410,3 +404,199 @@ video {
   height: 100vh;
 }
 
+
+
+.open-towel-btn {
+  position: absolute;
+  left: 40px;
+  bottom: 22px;
+  display: flex;
+  gap: 20px;
+  font-family: Almaz-Medium;
+  align-items: center;
+  font-size: 15px;
+  line-height: 120%;
+  text-transform: uppercase;
+}
+ .open-towel-btn-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #D95E46;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
+
+.towel-info {
+  position: absolute;
+  left: 40px;
+  bottom: 100px;
+  max-width: 420px;
+}
+.towel-head {
+  font-family: Almaz-Light;
+  font-size: 50px;
+  line-height: 126%;
+  text-transform: uppercase;
+}
+.towel-subhead {
+  font-family: Almaz-Medium;
+  font-size: 20px;
+  line-height: 130%;
+  color: #555555;
+}
+.towel-image {
+  height: 100vh;
+}
+
+
+/* support */
+.support {
+  background: #E9E8E7;
+  background-image: url(static/texture.png);
+  background-blend-mode: color-burn;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+}
+.support-wrp {
+  max-width: 874px;
+  display: flex;
+  flex-direction: column;
+  gap: 65px
+}
+.support-head {
+  font-size: 40px;
+  line-height: 130%;
+  text-transform: uppercase;
+  font-family: Almaz-Light;
+}
+.support-counter {
+  display: flex;
+  gap: 90px;
+  align-items: center;
+}
+.counter-txt {
+  max-width: 441px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.counter-txt-top {
+  font-size: 24px;
+  line-height: 100%;
+  font-family: Almaz-Medium;
+}
+.counter-txt-bottom {
+  font-size: 20px;
+  line-height: 140%;
+  color: #2F2E2D;
+}
+span.lb-count {
+  font-family: Almaz-Medium!important;
+  line-height: 130%;
+  padding: 0 0 0 30px!important
+}
+
+
+
+
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+
+
+
+/* platform */
+.platform {
+  background: #E9E8E7;
+  background-image: url(static/texture.png);
+  background-blend-mode: color-burn;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+}
+.platform-content {
+  margin-top: 40px;
+  display: flex;
+  gap: 150px
+}
+.plaform-content-left {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 678px;
+}
+.platform-head {
+  font-size: 40px;
+  line-height: 130%;
+  text-transform: uppercase;
+}
+.platform-txt {
+  font-size: 20px;
+  line-height: 140%;
+  color: #3D3D3D;
+}
+.platform-txt a {
+  text-decoration: underline;
+}
+
+.plaform-content-right a{
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+}
+
+.go-parent-site {
+  display: flex;
+  gap: 16px;
+  text-transform: uppercase;
+  font-family: Almaz-Medium;
+  font-size: 15px;
+}
+
+/* exhibition */
+.exhibition {
+  background: #E9E8E7;
+  background-image: url(static/texture.png);
+  background-blend-mode: color-burn;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+}
+.exhibition-wrp {
+  display: flex;
+  gap:150px;
+  max-width: 1130px;
+}
+.ex-left {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+}
+.ex-head {
+  font-size: 40px;
+  line-height: 130%;
+  text-transform: uppercase;
+  font-family: Almaz-Light;
+  margin-bottom: 40px;
+}
+.free-enter svg {
+  margin-right: 30px;
+}
+.ex-info {
+  text-transform: uppercase;
+  margin-top: auto;
+}
+.ex-poster {
+  max-width: 440px;
+}
