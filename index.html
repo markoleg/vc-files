@@ -596,7 +596,8 @@
             //     header.classList.toggle('nav-white');
             //     social.classList.toggle('social-white');
             // }
-            if ((window.scrollY==0) || (window.location.href.indexOf("11"))){
+            let loc = window.location.href
+            if ((loc.search("home")!==-1) || (loc.search("towels-creation")!==-1)){
                 header.classList.toggle('nav-white');
                 social.classList.toggle('social-white');
             }
