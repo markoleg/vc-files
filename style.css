@@ -109,8 +109,17 @@ pre {
   box-sizing: border-box;
 }
 
+a[target-section = '#about'] {
+  background-color: red;
+}
 
 
+html::-webkit-scrollbar {
+  /* display: none; */
+}
+.wrapper {
+  overflow: hidden;
+}
 
 
 @font-face {
@@ -319,7 +328,6 @@ section {
 
 .home-intro{
   position: relative;
-  height: 100vh;
 }
 .home-intro video {
   position: absolute;
@@ -392,7 +400,6 @@ section {
 
 /* about */
 .about {
-  height: 100vh;
   background: #E9E8E7;
   background-image: url(static/texture.png);
   background-blend-mode: color-burn;
@@ -429,7 +436,6 @@ section {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  height: 100vh;
 }
 
 
@@ -488,7 +494,6 @@ section {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  height: 100vh;
 }
 .support-wrp {
   max-width: 874px;
@@ -533,11 +538,6 @@ span.lb-count {
 
 
 
-html::-webkit-scrollbar {
-  display: none;
-}
-
-
 
 
 
@@ -550,7 +550,6 @@ html::-webkit-scrollbar {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  height: 100vh;
 }
 .platform-content {
   margin-top: 40px;
@@ -600,7 +599,6 @@ html::-webkit-scrollbar {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  height: 100vh;
 }
 .exhibition-wrp {
   display: flex;
@@ -637,7 +635,6 @@ html::-webkit-scrollbar {
 .towels-creation {
   background-color: red;
   padding: 0;
-  height: 100vh;
   position: relative;
 }
 .swiper {
@@ -722,7 +719,6 @@ html::-webkit-scrollbar {
 
 /* partners-section */
 .partners-section {
-  height: 100vh;
   background: #E9E8E7;
   background-image: url(static/texture.png);
   background-blend-mode: color-burn;
@@ -743,4 +739,31 @@ html::-webkit-scrollbar {
 }
 .exex-partners {
   margin-top: 20px;
+}
+
+
+
+
+.home-intro,
+.about,
+.see-towel,
+.support,
+.platform,
+.exhibition,
+.towels-creation,
+.partners-section {
+  height: 100vh;
+}
+
+@media (max-width:767px) {
+  .home-intro,
+.about,
+.see-towel,
+.support,
+.platform,
+.exhibition,
+.towels-creation,
+.partners-section {
+  height: 100%;
+}
 }

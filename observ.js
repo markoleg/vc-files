@@ -67,7 +67,7 @@ function observerCallback(entries, observer) {
   });
 };
 
-let target = '.about,.exhibition, .partners';
+let target = '.about,.exhibition, .partners, .towel1, .towel2, .towel3, .towel4, .towel5, .support, .platform'
 document.querySelectorAll(target).forEach((i) => {
   if (i) {
       observer.observe(i);

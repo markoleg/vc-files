@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.2.2/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <title>Document</title>
 </head>
 
@@ -16,7 +17,7 @@
 <body>
     <header class="nav-white">            
         <div class="logo-wrp">
-            <a href="#1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="1.4901161193847656e-8 0.27294909954071045 114.000244140625 67.36419677734375" fill="none" preserveAspectRatio="xMidYMid meet" role="img">
+            <a href="#" onclick="scrMoveTo('#home')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="1.4901161193847656e-8 0.27294909954071045 114.000244140625 67.36419677734375" fill="none" preserveAspectRatio="xMidYMid meet" role="img">
                 <rect x="43.916" y="31.0884" width="2.64613" height="2.64606" rx="0.504987" fill="#D95E46"></rect>
                 <rect x="65.082" y="31.0884" width="2.64613" height="2.64606" rx="0.504987" fill="#D95E46"></rect>
                 <rect x="43.916" y="25.7993" width="2.64613" height="2.64606" rx="0.504987" fill="#D95E46"></rect>
@@ -154,18 +155,18 @@
 
     
     <div class="navigation white">
-        <a  href="#1" class="active"></a>
-        <a  href="#2"></a>
-        <a  href="#3"></a>
-        <a  href="#4"></a>
-        <a  href="#5"></a>
-        <a  href="#6"></a>
-        <a  href="#7"></a>
-        <a  href="#8"></a>
-        <a  href="#9"></a>
-        <a  href="#10"></a>
-        <a  href="#11"></a>
-        <a  href="#12"></a>
+        <a href="#" onclick="scrMoveTo('#home')" target-section="#home" class="active"></a>
+        <a  href="#" onclick="scrMoveTo('#about')" target-section="#about"></a>
+        <a  href="#" onclick="scrMoveTo('#towel1')" target-section="#towel1"></a>
+        <a  href="#" onclick="scrMoveTo('#towel2')" target-section="#towel2"></a>
+        <a  href="#" onclick="scrMoveTo('#towel3')" target-section="#towel3"></a>
+        <a href="#" onclick="scrMoveTo('#towel4')" target-section="#towel4"></a>
+        <a  href="#" onclick="scrMoveTo('#towel5')" target-section="#towel5"></a>
+        <a  href="#" onclick="scrMoveTo('#support')" target-section="#support"></a>
+        <a  href="#" onclick="scrMoveTo('#platform')" target-section="#platform"></a>
+        <a  href="#" onclick="scrMoveTo('#exhibition')" target-section="#exhibition"></a>
+        <a  href="#" onclick="scrMoveTo('#towels-creation')" target-section="#towels-creation"></a>
+        <a  href="#" onclick="scrMoveTo('#partners')" target-section="#partners"></a>
     </div>
 
 
@@ -220,7 +221,7 @@
                     <br>
                     <p>Ми вишили рушники, щоби переповісти історії про сексуальне насильство на війні, скоєне проти людей, яких не існує. Але вони зібрані з подій, які відбулися насправді. І з подій, які ще обов’язково відбудуться. А відбудеться от що: рани загояться, світло повернеться, ми все переживемо. Далі є.</p>
                 </div>
-                
+                                
                 <div class="partners">
                     <img src="static/partners/partn-1.svg" alt="">
                     <img src="static/partners/partn-2.svg" alt="">
@@ -559,15 +560,15 @@
                 section: ".section",
                 // sectionName: "section",
                 // interstitialSection: "",
-                easing: "easeOutExpo",
-                scrollSpeed: 1100,
+                easing: "easeInOutQuint",
+                scrollSpeed: 900,
                 // offset: 0,
                 scrollbars: true,
                 // standardScrollElements: "",
                 setHeights: false,
                 overflowScroll: true,
                 // updateHash: true,
-                // touchScroll: true,
+                touchScroll: true,
                 // before: function () { },
                 // after: function () { },
                 // afterResize: function () { },
@@ -576,6 +577,11 @@
         });
 
         
+    </script>
+    <script>
+        function scrMoveTo(i) {
+            $.scrollify.move(i);
+        }
     </script>
 
 
@@ -617,7 +623,7 @@
     <!-- navigation dots -->
     <script>
         // Get all sections that have an ID defined
-const sections = document.querySelectorAll("section[id]");
+const sections = document.querySelectorAll(".section");
 
 // Add an event listener listening for scroll
 window.addEventListener("scroll", navHighlighter);
@@ -631,7 +637,7 @@ function navHighlighter() {
   sections.forEach(current => {
     const sectionHeight = current.offsetHeight;
     const sectionTop = current.offsetTop - 50;
-    sectionId = current.getAttribute("id");
+    sectionIdTarget = current.getAttribute("data-section-name");
 
     /*
     - If our current scroll position enters the space where current section on screen is, add .active class to corresponding navigation link, else remove it
@@ -641,9 +647,9 @@ function navHighlighter() {
       scrollY > sectionTop &&
       scrollY <= sectionTop + sectionHeight
     ) {
-      document.querySelector(".navigation a[href*=" + "\"" + sectionId + "\"" +  "]").classList.add("active");
+      document.querySelector(".navigation a[target-section=" + "\'" + "#" + sectionIdTarget + "\'" + "]").classList.add("active");
     } else {
-      document.querySelector(".navigation a[href*=" + "\"" + sectionId + "\"" +  "]").classList.remove("active");
+      document.querySelector(".navigation a[target-section=" + "\'" + "#" + sectionIdTarget + "\'" + "]").classList.remove("active");
     }
   });
 }
@@ -651,3 +657,4 @@ function navHighlighter() {
     </script>
 </body>
 </html>
+
