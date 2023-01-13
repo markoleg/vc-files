@@ -10,12 +10,13 @@
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.2.2/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js"></script>
     <title>Document</title>
 </head>
 
 
 <body>
-    <header class="nav-white">            
+    <header >            
         <div class="logo-wrp">
             <a href="#" onclick="scrMoveTo('#home')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="1.4901161193847656e-8 0.27294909954071045 114.000244140625 67.36419677734375" fill="none" preserveAspectRatio="xMidYMid meet" role="img">
                 <rect x="43.916" y="31.0884" width="2.64613" height="2.64606" rx="0.504987" fill="#D95E46"></rect>
@@ -154,7 +155,7 @@
     </nav>
 
     
-    <div class="navigation white">
+    <div class="navigation ">
         <a href="#" onclick="scrMoveTo('#home')" target-section="#home" class="active"></a>
         <a  href="#" onclick="scrMoveTo('#about')" target-section="#about"></a>
         <a  href="#" onclick="scrMoveTo('#towel1')" target-section="#towel1"></a>
@@ -170,7 +171,7 @@
     </div>
 
 
-    <div class="social social-white">
+    <div class="social">
         <a href="">FB</a>
         <div class="divider">/</div>
         <a href="">IN</a>
@@ -197,7 +198,7 @@
                 </div>
                 <div>Дивитись відео</div>
             </a>
-            <a href="" class="parent-site">
+            <a href="api.html" class="parent-site">
                 на сайт далі є
                 <svg width="11" height="16" viewBox="0 0 11 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="5.33333" height="5.33333" fill="white"/>
@@ -221,7 +222,6 @@
                     <br>
                     <p>Ми вишили рушники, щоби переповісти історії про сексуальне насильство на війні, скоєне проти людей, яких не існує. Але вони зібрані з подій, які відбулися насправді. І з подій, які ще обов’язково відбудуться. А відбудеться от що: рани загояться, світло повернеться, ми все переживемо. Далі є.</p>
                 </div>
-                                
                 <div class="partners">
                     <img src="static/partners/partn-1.svg" alt="">
                     <img src="static/partners/partn-2.svg" alt="">
@@ -237,6 +237,7 @@
                     <rect y="10.6665" width="5.33333" height="5.33333" fill="#111111"/>
                 </svg>
             </a>
+            <img class="smoke" src="static/smoke-33801.png" alt="" srcset="">
         </section>
 
 
@@ -439,6 +440,7 @@
                 </svg>
             </a>
         </section>
+
         <section id="11" data-section-name="towels-creation" class="section towels-creation">
             <!-- Slider main container -->
             <div class="swiper">
@@ -513,6 +515,7 @@
                 });
             </script>
         </section>
+
         <section id="12" data-section-name="partners" class="section partners-section">
             <div class="partners-wrp">
                 <div class="orange-dots">
@@ -654,6 +657,170 @@ function navHighlighter() {
   });
 }
 
+    </script>
+    <script>
+       /* smoke.js */
+
+class Smoke {
+
+constructor(options) {
+  const defaults = {
+    width: window.innerWidth,
+    height: window.innerHeight
+  };
+
+  Object.assign(this, options, defaults);
+  this.onResize = this.onResize.bind(this);
+
+  this.addEventListeners();
+  this.init();
+}
+
+init() {
+  const { width, height } = this;
+
+  this.clock = new THREE.Clock();
+
+  const renderer = this.renderer = new THREE.WebGLRenderer();
+
+  renderer.setSize(width, height);
+
+  this.scene = new THREE.Scene();
+
+  const meshGeometry = new THREE.CubeGeometry(200, 200, 200);
+  const meshMaterial = new THREE.MeshLambertMaterial({
+    color: 0xaa6666,
+    wireframe: false
+  });
+  this.mesh = new THREE.Mesh(meshGeometry, meshMaterial);
+
+  this.cubeSineDriver = 0;
+
+  this.addCamera();
+  this.addLights();
+  this.addParticles();
+  this.addBackground();
+
+  document.body.appendChild(renderer.domElement);
+}
+
+evolveSmoke(delta) {
+  const { smokeParticles } = this;
+
+  let smokeParticlesLength = smokeParticles.length;
+
+  while(smokeParticlesLength--) {
+    smokeParticles[smokeParticlesLength].rotation.z += delta * 0.2;
+  }
+}
+
+addLights() {
+  const { scene } = this;
+  const light = new THREE.DirectionalLight(0xffffff, 0.75);
+
+  light.position.set(-1, 0, 1);
+  scene.add(light);
+}
+
+addCamera() {
+  const { scene } = this;
+  const camera = this.camera = new THREE.PerspectiveCamera(75, this.width / this.height, 1, 10000);
+
+  camera.position.z = 1000;
+  scene.add(camera);
+}
+
+addParticles() {
+  const { scene } = this;
+  const textureLoader = new THREE.TextureLoader();
+  const smokeParticles = this.smokeParticles = [];
+
+  textureLoader.load('https://rawgit.com/marcobiedermann/playground/master/three.js/smoke-particles/dist/assets/images/clouds.png', texture => {
+    const smokeMaterial = new THREE.MeshLambertMaterial({
+      color: 0xffffff,
+      map: texture,
+      transparent: true
+    });
+    smokeMaterial.map.minFilter = THREE.LinearFilter;
+    const smokeGeometry = new THREE.PlaneBufferGeometry(300, 300);
+
+    const smokeMeshes = [];
+    let limit = 150;
+
+    while(limit--) {
+      smokeMeshes[limit] = new THREE.Mesh(smokeGeometry, smokeMaterial);
+      smokeMeshes[limit].position.set(Math.random() * 500 - 250, Math.random() * 500 - 250, Math.random() * 1000 - 100);
+      smokeMeshes[limit].rotation.z = Math.random() * 360;
+      smokeParticles.push(smokeMeshes[limit]);
+      scene.add(smokeMeshes[limit]);
+    }
+  });
+}
+
+addBackground() {
+  const { scene } = this;
+  const textureLoader = new THREE.TextureLoader();
+  const textGeometry = new THREE.PlaneBufferGeometry(600, 320);
+
+  textureLoader.load('https://rawgit.com/marcobiedermann/playground/master/three.js/smoke-particles/dist/assets/images/background.jpg', texture => {
+    const textMaterial = new THREE.MeshLambertMaterial({
+      blending: THREE.AdditiveBlending,
+      color: 0xffffff,
+      map: texture,
+      opacity: 1,
+      transparent: true
+    });
+    textMaterial.map.minFilter = THREE.LinearFilter;
+    const text = new THREE.Mesh(textGeometry, textMaterial);
+
+    text.position.z = 800;
+    scene.add(text);
+  });
+}
+
+render() {
+  const { mesh } = this;
+  let { cubeSineDriver } = this;
+
+  cubeSineDriver += 0.01;
+
+  mesh.rotation.x += 0.005;
+  mesh.rotation.y += 0.01;
+  mesh.position.z = 100 + Math.sin(cubeSineDriver) * 500;
+
+  this.renderer.render(this.scene, this.camera);
+}
+
+update() {
+  this.evolveSmoke(this.clock.getDelta());
+  this.render();
+
+  requestAnimationFrame(this.update.bind(this));
+}
+
+onResize() {
+  const { camera } = this;
+
+  const windowWidth  = window.innerWidth;
+  const windowHeight = window.innerHeight;
+
+  camera.aspect = windowWidth / windowHeight;
+  camera.updateProjectionMatrix();
+
+  this.renderer.setSize(windowWidth, windowHeight);
+}
+
+addEventListeners() {
+  window.addEventListener('resize', this.onResize);
+}
+
+}
+
+/* app.js */
+
+const smoke = new Smoke();
+
+smoke.update(); 
     </script>
 </body>
 </html>
