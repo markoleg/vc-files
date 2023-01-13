@@ -6,8 +6,9 @@ const sectionOne = document.querySelector(".home-intro");
 const sectionSlider = document.querySelector(".towels-creation");
 
 const sectionOneOptions = {
-  rootMargin: "-500px 0px 0px 0px"
+  rootMargin: "-100px 0px -100px 0px"
 };
+
 
 const sectionOneObserver = new IntersectionObserver(function(
   entries,
@@ -19,16 +20,15 @@ const sectionOneObserver = new IntersectionObserver(function(
       social.classList.add("social-white")
       navigation.classList.add("white")
     } else {
-      header.classList.remove("nav-white");
-      social.classList.remove("social-white")
-      navigation.classList.remove("white")
+      
     }
   });
 },
 sectionOneOptions);
 
+
 const sectionSliderOptions = {
-  rootMargin: "-200px 0px -500px 0px"
+  rootMargin: "-100px 0px -100px 0px"
 };
 
 const sectionSliderObserver = new IntersectionObserver(function(
@@ -41,9 +41,7 @@ const sectionSliderObserver = new IntersectionObserver(function(
       social.classList.add("social-white")
       navigation.classList.add("white")
     } else {
-      header.classList.remove("nav-white");
-      social.classList.remove("social-white")
-      navigation.classList.remove("white")
+      
     }
   });
 },
@@ -51,3 +49,27 @@ sectionSliderOptions);
 
 sectionOneObserver.observe(sectionOne);
 sectionSliderObserver.observe(sectionSlider);
+
+let observerOptions = {
+  rootMargin: '-20px',
+  threshold: 0.5
+}
+
+var observer = new IntersectionObserver(observerCallback, observerOptions);
+
+function observerCallback(entries, observer) {
+  entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        header.classList.remove("nav-white");
+        social.classList.remove("social-white")
+        navigation.classList.remove("white")
+      }
+  });
+};
+
+let target = '.about,.exhibition, .partners';
+document.querySelectorAll(target).forEach((i) => {
+  if (i) {
+      observer.observe(i);
+  }
+});
