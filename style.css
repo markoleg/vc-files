@@ -109,9 +109,7 @@ pre {
   box-sizing: border-box;
 }
 
-a[target-section = '#about'] {
-  background-color: red;
-}
+
 
 
 html::-webkit-scrollbar {
@@ -330,7 +328,7 @@ section {
 .home-intro{
   position: relative;
 }
-.home-intro video {
+.home-intro .bg-video {
   position: absolute;
   width: 100%;
   height: 100vh;
@@ -373,6 +371,7 @@ section {
   font-size: 15px;
   line-height: 120%;
   text-transform: uppercase;
+  cursor: pointer;
 }
  .hero-video-btn-circle {
   width: 50px;
@@ -396,9 +395,30 @@ section {
 .parent-site svg {
   margin-left: 12px;
 }
+.video-wrapper {
+  position: absolute;
+  left: 0;
+  z-index: 99;
+  background: black;
+  height: 100%;
+  width: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.video-wrapper.active {
+  display: flex;
 
-
-
+}
+.full-video {
+  width: 90%;
+}
+.close {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  cursor: pointer;
+}
 /* about */
 .about {
   background: #E9E8E7;
@@ -529,7 +549,7 @@ section {
   line-height: 140%;
   color: #2F2E2D;
 }
-span.lb-count {
+.support-counter span.lb-count {
   font-family: Almaz-Medium!important;
   line-height: 130%;
   padding: 0 0 0 30px!important
@@ -768,6 +788,21 @@ span.lb-count {
   height: 100%;
 }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .smoke {

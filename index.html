@@ -10,8 +10,7 @@
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.2.2/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js"></script>
-    <title>Document</title>
+    <title>Вишиті болем</title>
 </head>
 
 
@@ -183,13 +182,13 @@
 
     <div class="wrapper">
         <section id="1" data-section-name="home" class="section home-intro">
-            <video autoplay muted loop 
+            <video class="bg-video" autoplay muted loop 
             src="https://videos-cdn.readymag.com/5cfe1ca664162178d8215788/6393113422734a36c4f2edb3/e352ce82-2864-4dbb-9fda-e1053ccd6ff7.mp4"></video>
             <div class="hero-wrp">
                 <h1>вишиті болем</h1>
                 <h2>Історії, про які мовчать, вишиті на рушниках</h2>
             </div>
-            <a href="" class="hero-video-btn">
+            <div class="hero-video-btn" onclick="toggleVideo()">
                 <div class="hero-video-btn-circle"><svg width="14" height="21" viewBox="0 0 14 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="0.333984" y="0.00146484" width="6.66667" height="6.66667" fill="white"/>
                     <rect x="7.00195" y="6.66797" width="6.66667" height="6.66667" fill="white"/>
@@ -197,15 +196,28 @@
                     </svg>
                 </div>
                 <div>Дивитись відео</div>
-            </a>
-            <a href="" class="parent-site">
+            </div>
+            <a href="#" class="parent-site">
                 на сайт далі є
                 <svg width="11" height="16" viewBox="0 0 11 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="5.33333" height="5.33333" fill="white"/>
                 <rect x="5.33398" y="5.3335" width="5.33333" height="5.33333" fill="white"/>
                 <rect y="10.6665" width="5.33333" height="5.33333" fill="white"/>
                 </svg></a>
-           
+            <div class="video-wrapper">
+                <video class="full-video" controls>
+                    <source src="static/Vyshyti-bolem.mp4" type="video/mp4">
+                </video>
+                <div class="close" onclick="toggleVideo()">
+                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect y="0.682129" width="4" height="4" fill="white"/>
+                        <rect y="20.6821" width="4" height="4" fill="white"/>
+                        <rect x="10" y="10.6821" width="4" height="4" fill="white"/>
+                        <rect x="20" y="0.682129" width="4" height="4" fill="white"/>
+                        <rect x="20" y="20.6821" width="4" height="4" fill="white"/>
+                    </svg>
+                </div>
+            </div> 
         </section>
         
         <section id="2" data-section-name="about" class="section about">
@@ -659,6 +671,14 @@ function navHighlighter() {
 
     </script>
 
+
+    <!-- video modal -->
+    <script>
+        function toggleVideo() {
+            let videowrapper = document.querySelector('.video-wrapper');
+            videowrapper.classList.toggle('active')
+        }
+    </script>
 </body>
 </html>
 
