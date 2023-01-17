@@ -809,20 +809,23 @@ section {
 
 .smoke-under {
   position: absolute;
-  height: 100vh;
-  width: 100vw;
+  height: 200vh;
+  width: 200vw;
   opacity: 0.9;
   animation: smokemove 11s ease-in-out infinite;
+  background-image: url(static/smoke-1920.png);
+  background-position: center;
+  background-size: 67%;
 }
 .smoke {
   position: absolute;
-  height: 90vh;
+  height: 70vh;
   opacity: 0.9;
   /* animation: smokemove 11s ease-in-out infinite, smoke 5s ease-in-out in; */
   animation: smokemove 11s ease-in-out infinite;
   transition: all 2s;
   z-index: 2;
-
+  
 }
 .smoke:hover {
   transition: all 4s;
