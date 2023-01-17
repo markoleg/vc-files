@@ -316,6 +316,7 @@ section {
   font-family: Almaz-Medium;
   font-size: 15px;
   display: flex;
+  z-index: 5;
 }
 .read-towel svg {
   margin-left: 12px;
@@ -430,6 +431,7 @@ section {
 }
 .about-wrp {
   max-width: 896px;
+  position: relative;
 }
 .about-txt {
   margin: 40px 0 70px;
@@ -805,13 +807,21 @@ section {
 
 
 
+.smoke-under {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  opacity: 0.9;
+  animation: smokemove 11s ease-in-out infinite;
+}
 .smoke {
   position: absolute;
   height: 90vh;
   opacity: 0.9;
   /* animation: smokemove 11s ease-in-out infinite, smoke 5s ease-in-out in; */
   animation: smokemove 11s ease-in-out infinite;
-  transition: all 4s;
+  transition: all 2s;
+  z-index: 2;
 
 }
 .smoke:hover {
