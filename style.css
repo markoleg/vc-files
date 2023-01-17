@@ -807,7 +807,7 @@ section {
 
 .smoke {
   position: absolute;
-  height: 70vh;
+  height: 90vh;
   opacity: 0.9;
   /* animation: smokemove 11s ease-in-out infinite, smoke 5s ease-in-out in; */
   animation: smokemove 11s ease-in-out infinite;
