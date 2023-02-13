@@ -3,11 +3,11 @@
     padding: 0;
     font-family: 'Nunito Sans', sans-serif;
 }
-.results {
+/* .results {
     position: fixed;
     right: 100px;
     bottom: 100px;
-}
+} */
 .container {
     max-width: 1400px;
     margin: 0 auto;
@@ -330,6 +330,7 @@ output#res-num {
 #res-expl {
     position: absolute;
     bottom: 0;
+    left: 2%;
     transform: translateX(-50%);
     white-space: nowrap;
     font-weight: 400;
