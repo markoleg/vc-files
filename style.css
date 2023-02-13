@@ -73,7 +73,10 @@ header {
     overflow: hidden;
     width: 100%;
     height: 0;
-
+    transition: all 1s;
+}
+.intro-wrp {
+    max-width: 73%
 }
 .modal-txt {
     font-weight: 600;
