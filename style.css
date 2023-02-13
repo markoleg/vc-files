@@ -334,7 +334,6 @@ output#res-num {
 #res-expl {
     position: absolute;
     bottom: 0;
-    left: 2%;
     transform: translateX(-50%);
     white-space: nowrap;
     font-weight: 400;
@@ -382,11 +381,13 @@ output#res-num {
 @media (max-width:767px) {
     .body-test {
         overflow-x: hidden;
+        background-image: url(static/test-bg-mob.png);
     }
     .prev {
         width: 27px;
-        top: 40px;
+        top: 32px;
         overflow: hidden;
+        z-index: 3;
     }
     .test h1 {
         font-size: 10px;
@@ -418,7 +419,7 @@ output#res-num {
         font-size: 15px;
     }
     .q-head {
-        padding-left: 20px;
+        padding-left: 32px;
         font-size: 18px;
         margin-bottom: 10px;
     }
@@ -439,6 +440,13 @@ output#res-num {
     }
     .bmi-res {
         margin: 50px 0 0;
+    }
+    output#res-num {
+        font-size: 16px;
+    }
+    #res-expl {
+        font-size: 14px;
+        white-space: normal;
     }
 }
 
