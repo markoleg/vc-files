@@ -113,11 +113,12 @@ header {
     }
     .intro-txt {
         font-size: 15px;
+        margin-bottom: 30px;
+
     }
     .modal-txt {
         font-size: 11px;
         line-height: 140%;
-        margin-bottom: 30px;
     }
     .intro-btn {
         font-size: 20px;
@@ -732,4 +733,30 @@ output#res-num {
     font-size: 52px;
     line-height: 110%;
     text-align: center;
+}
+
+@media (max-width:767px) {
+    .res-wrp {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .res-score-wrp {
+        justify-content: center;
+        padding: 0;
+    }
+    .ellipses-wrapper {
+        position: static;
+    }
+    .ellipses img {
+        width: 136%;
+        top: -24px;
+        left: -24px;
+    }
+    .res-score {
+        width: 130px;
+        height: 130px;
+    }
+    .contact-form-inp {
+        flex-direction: column;
+    }
 }
