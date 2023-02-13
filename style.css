@@ -39,7 +39,7 @@ header {
     letter-spacing: 0.025em;
     color: #282E33;
     font-weight: 700;
-    font-size: 74px;
+    font-size: 50px;
     line-height: 117.9%;
     margin-bottom: 20px;
 }
@@ -56,8 +56,8 @@ header {
     font-size: 32px;
     line-height: 150%;
     border-radius: 40px;
-    width: 330px;
-    height: 80px;
+    width: 250px;
+    height: 60px;
     border: none;
     background: linear-gradient(270deg, #00F1FF 0%, #038FFF 100%);
     color: white;
@@ -95,7 +95,7 @@ header {
 }
 .close-modal {
     position: absolute;
-    right: 0;
+    right: 20px;
     top: -20px;
     cursor: pointer;
 }
@@ -424,7 +424,7 @@ output#res-num {
     font-weight: 700;
     font-size: 48px;
     line-height: 117.9%;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 .expl-txt, .expl-txt-full {
     color: #282E33;
@@ -434,7 +434,6 @@ output#res-num {
 }
 .expl-txt-full {
     display: none;
-
 }
 .med-link {
     text-decoration: none;
