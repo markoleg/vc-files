@@ -14,8 +14,8 @@
     <header>
         <div class="container">
             <div class="header-wrp">
-                <img src="../static/znaty_vchasno-logo.svg" alt="" srcset="">
-                <img src="../static/ivmed-logo.svg" alt="" srcset="">
+                <img src="static/znaty_vchasno-logo.svg" alt="" srcset="">
+                <img src="static/ivmed-logo.svg" alt="" srcset="">
             </div>
         </div>
     </header>
@@ -47,5 +47,12 @@
             </div>
         </div>
     </div>
+    <script>
+        const myTimeout = setTimeout(openmodal, 3000);
+
+        function openmodal() {
+        document.querySelector('.intro-modal').style.height = 'auto'
+        }
+    </script>
 </body>
 </html>

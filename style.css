@@ -71,6 +71,9 @@ header {
     bottom: 0;
     animation: modal 1s 4s;
     overflow: hidden;
+    width: 100%;
+    height: 0;
+    padding: 40px 0;
 }
 .modal-txt {
     font-weight: 600;
@@ -86,12 +89,7 @@ header {
     right: 0;
     top: 20px;
 }
-@keyframes modal {
-    from {height: 0;}
-    to {
-        height: auto;
-    }
-}
+
 
 
 
