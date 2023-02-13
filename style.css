@@ -72,7 +72,7 @@ header {
     animation: modal 1s 4s;
     overflow: hidden;
     width: 100%;
-    height: 0;
+    max-height: 0;
     transition: all 1s;
 }
 .intro-wrp {
@@ -88,10 +88,13 @@ header {
 .intro-modal .container {
     position: relative;
 }
+.modal-txt {
+    margin-right: 3%;
+}
 .close-modal {
     position: absolute;
     right: 0;
-    top: 20px;
+    top: -20px;
 }
 
 
