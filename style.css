@@ -23,7 +23,11 @@ header {
     padding: 20px 0;
     height: 100px;
 }
-
+@media (max-width:767px) {
+    .header-wrp {
+        height: 60px;
+    }
+}
 /* intro */
 
 .intro-body {
