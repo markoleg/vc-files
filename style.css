@@ -339,7 +339,7 @@ output#res-num {
     color: #8A97A0;
 }
 .swiper-slide:nth-child(7) .test-form ul {
-    max-height: 3500px;
+    max-height: 350px;
     overflow-y: scroll;
 }
 .swiper-slide:nth-child(7) .test-form ul::-webkit-scrollbar-track {
