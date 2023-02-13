@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body class="body-res">
+    <header>
+        <div class="container">
+            <div class="header-wrp">
+                <img src="../static/znaty_vchasno-logo.svg" alt="" srcset="">
+                <img src="../static/ivmed-logo.svg" alt="" srcset="">
+            </div>
+        </div>
+    </header>
+    <section class="results-section">
+        <div class="container">
+                <a href="../index.html" class="test-again">
+                    <svg width="15" height="26" viewBox="0 0 15 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.0358 2.10713L1.85745 13.0713L13.0358 24.0354" stroke="#038FFF" stroke-width="3"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    пройти тест повторно
+                </a>
+                <a href="" class="res-share">
+                    <img src="../static/share.svg" alt="">
+                    поділитись<br>з близькими
+                </a>
+                <div class="res-wrp">
+                    <div class="res-explain">
+                        <h1 class="res-head">Рівень ризику розвитку безпліддя – низький</h1>
+                        <div class="expl-txt">
+                            Вітаємо! Ваш вік і стан здоров’я дозволяють мати високі шанси 
+                            зачати дитину...
+                        </div>
+                        <div class="expl-txt-full">
+                            <p>
+                            Вітаємо! Ваш вік і стан здоров’я дозволяють мати високі шанси
+                            зачати дитину. Дотримуйтеся здорового способу життя, правильно харчуйтеся, займайтеся спортом та не забувайте про
+                            регулярні медичні огляди. 
+                            </p>
+                            <br>
+                            <p>
+                            Рекомендуємо отримати профілактичну консультацію від репродуктолога. Навіть, якщо не плануєте народжувати дітей
+                            зараз, краще вчасно дізнатися про можливі ризик-фактори.
+                            Якщо ви жінка, ви можете порадитися з лікарем щодо аналізу на антимюллерів гормон (АМГ), який визначає кількість
+                            яйцеклітин у жінок. Якщо ви чоловік, є можливість оцінити якість спермограми. Краще дізнатися вчасно, щоби не було
+                            пізно.
+                            </p>
+                            <br>
+                            <p>
+                            Дізнатись більше про репродуктивне здоров’я можна за <a href="" class="med-link">посиланням</a> 
+                            </p>
+                        </div>
+                        <div class="to-full" onclick="tofullres()">
+                            <div class="to-full-txt">розгорнутий результат</div>
+                            <div class="to-min-txt">згорнути результат</div> 
+                            <svg width="26" height="15" viewBox="0 0 26 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M24.0355 1.89287L13.0713 13.0713L2.10719 1.89288" stroke="#038FFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="divider"></div>
+                        <form action="" class="contact-form">
+                            <div class="cf-txt"> За бажанням ви можете залишити свої контакти для запису на консультацію та ми вам перетелефонуємо.</div>
+                            <div class="contact-form-inp">
+                                <input type="text" name="name" placeholder="Ім'я" required>
+                                <input type="text" name="phone" placeholder="Телефон"required>
+                            </div>
+                            <button type="submit" disabled>Зберегти</button>
+          
+                            
+                        </form>
+                        <div class="persdata-wrp" onclick="subbtn()">
+                            <input type="radio" name="persdata" id="persdata">
+                            <label for="persdata">Я даю згоду на збір та обробку моїх персональних даних відповідно
+                                до Закону України "Про захист персональних даних"</label>
+                        </div>
+                    </div>
+                    <div class="res-score-wrp">
+                        <div class="ellipses-wrapper">
+                            <div class="ellipses">
+                                <img src="../static/Ellipse 10.svg" alt="">
+                                <img src="../static/Ellipse 11.svg" alt="">
+                                <img src="../static/Ellipse 12.svg" alt="">
+                                <img src="../static/Ellipse 14.svg" alt="">
+                                <img src="../static/Ellipse 13.svg" alt="">
+                            </div>
+                            <div class="res-score">
+                                <span class="result-score">6</span><span class="points">балів</span> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </section>
+    <script>
+        function tofullres() {
+            let resexlp = document.querySelector('.res-explain');
+            resexlp.classList.toggle('full')
+        }
+    </script>
+    <script>
+        function subbtn() {
+            let btnsubmit = document.querySelector('.contact-form button ');
+            btnsubmit.classList.add('active');
+            btnsubmit.removeAttribute('disabled')
+        }
+    </script>
+    <script>
+        let resultscore = document.querySelector('.result-score');
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const score = urlParams.get('score');
+        resultscore.innerHTML = score;
+    </script>
+</body>
+</html>
