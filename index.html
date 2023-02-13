@@ -42,7 +42,7 @@
                 ризику розвитку безпліддя. Дані результати не є медичними порадами, методом діагностики чи лікування. У разі виникнення
                 запитань, будь ласка, зверніться до свого лікаря, щоб отримати консультацію та індивідуальний план лікування.
             </div>
-            <div class="close-modal">
+            <div class="close-modal" onclick="closemodal()">
                 <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M23.2129 2L1.99969 23.2132" stroke="#038FFF" stroke-width="3"/>
                     <path d="M2 2L23.2132 23.2132" stroke="#038FFF" stroke-width="3"/>
@@ -55,6 +55,11 @@
 
         function openmodal() {
         document.querySelector('.intro-modal').style.maxHeight = '100%'
+        }
+    </script>
+    <script>
+        function closemodal() {
+            document.querySelector('.intro-modal').style.maxHeight = '0'
         }
     </script>
 </body>
