@@ -22,18 +22,96 @@ header {
     justify-content: space-between;
     padding: 45px 0 33px;
 }
-.test {
-    
-    /* display: flex; */
-    justify-content: center;
-    align-items: center;
+
+/* intro */
+
+.intro-body {
+    min-height: 100vh;
+    background-image: url(static/intro-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
+
+.intro-head {
+    margin-top: 35px;
+    letter-spacing: 0.025em;
+    color: #282E33;
+    font-weight: 700;
+    font-size: 74px;
+    line-height: 117.9%;
+    margin-bottom: 20px;
+}
+.intro-txt {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 150%;
+    color: #282E33;
+    margin-bottom: 60px;
+}
+.intro-btn {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 150%;
+    border-radius: 40px;
+    width: 330px;
+    height: 80px;
+    border: none;
+    background: linear-gradient(270deg, #00F1FF 0%, #038FFF 100%);
+    color: white;
+    cursor: pointer;
+}
+.intro-modal {
+    background: #FFFFFF;
+    opacity: 0.86;
+    box-shadow: 0px -12px 34px -8px rgba(105, 147, 181, 0.26);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    animation: modal 1s 4s;
+    overflow: hidden;
+}
+.modal-txt {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 150%;
+    color: #383838;
+}
+.intro-modal .container {
+    position: relative;
+}
+.close-modal {
+    position: absolute;
+    right: 0;
+    top: 20px;
+}
+@keyframes modal {
+    from {height: 0;}
+    to {
+        height: auto;
+    }
+}
+
+
+
+
+
+
+/* tests */
+
 .body-test {
     min-height: 100vh;
     background-image: url(static/test-bg.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+.test {
+    
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
 }
 .test-wrp {
     position: relative;
