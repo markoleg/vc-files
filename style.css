@@ -376,6 +376,9 @@ output#res-num {
 
 
 @media (max-width:767px) {
+    .body-test {
+        overflow: hidden;
+    }
     .prev {
         width: 27px;
         top: 40px;
@@ -398,9 +401,12 @@ output#res-num {
         right: 0;
         margin-left: auto;
         margin-right: auto;
-        top: 1px;
-        height: 2px;
-        background-size: contain;
+        top: 0px;
+        height: 4px;
+        background-size: 100% 4px;
+    }
+    .test-form::after {
+        border-radius: 20px;
     }
     .q-head {
         padding-left: 20px;
