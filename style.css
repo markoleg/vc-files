@@ -380,9 +380,6 @@ output#res-num {
 
 
 @media (max-width:767px) {
-    .body-test {
-        overflow: hidden;
-    }
     .prev {
         width: 27px;
         top: 40px;
