@@ -738,7 +738,7 @@ output#res-num {
 @media (max-width:767px) {
     .body-res {
         background-image: url(static/res-bg-mob.png);
-        background-size: contain;
+        background-size: 100% 100%;
     }
     .test-again {
         font-size: 12px;
