@@ -755,6 +755,7 @@ output#res-num {
     .res-score {
         width: 130px;
         height: 130px;
+        margin: 0;
     }
     .contact-form-inp {
         flex-direction: column;
