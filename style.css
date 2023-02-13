@@ -61,6 +61,7 @@ header {
     background: linear-gradient(270deg, #00F1FF 0%, #038FFF 100%);
     color: white;
     cursor: pointer;
+    text-decoration: none;
 }
 .intro-modal {
     background: #FFFFFF;
