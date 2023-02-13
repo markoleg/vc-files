@@ -106,7 +106,7 @@ header {
 
 @media (max-width:767px) {
     .intro-wrp {
-        max-height: 100%;
+        max-width: 100%;
     }
     .intro-head {
         font-size: 22px;
@@ -117,11 +117,13 @@ header {
     .modal-txt {
         font-size: 11px;
         line-height: 140%;
+        margin-bottom: 30px;
     }
     .intro-btn {
         font-size: 20px;
+        width: 100%;
     }
-    .close-modal {
+    .close-modal svg {
         height: 16px;
         width: 16px;
     }
