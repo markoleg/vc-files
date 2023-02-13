@@ -374,6 +374,48 @@ output#res-num {
 }
 
 
+
+@media (max-width:767px) {
+    .prev {
+        width: 27px;
+        top: 40px;
+    }
+    .test h1 {
+        font-size: 10px;
+        padding: 0;
+        margin-bottom: 15px;
+    }
+    .swiper {
+        overflow: visible;
+    }
+    .test-form {
+        border-radius: 20px;
+        width: 100%;
+    }
+    .test-form::before {
+        width: 75%;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        top: 1px;
+        height: 2px;
+        background-size: contain;
+    }
+    .q-head {
+        padding-left: 20px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
 /* results */
 
 .body-res {
