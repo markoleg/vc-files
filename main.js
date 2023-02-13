@@ -1,7 +1,7 @@
 
 function backfun () {
     if (swiper.slides[0].classList.contains('swiper-slide-active')){
-        window.location = "https://www.google.com/"
+        window.location = "index.html"
     }
     else {
         swiper.slidePrev()
