@@ -24,12 +24,11 @@ header {
     height: 100px;
 }
 .header-wrp a {
-    display: flex;
+    display: inline-flex;
     justify-content: flex-end;
 }
 .header-wrp a img {
     height: 100%;
-    margin-left: auto;
 }
 @media (max-width:767px) {
     .header-wrp {
