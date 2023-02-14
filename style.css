@@ -467,6 +467,7 @@ output#res-num {
         box-shadow: none;
         padding: 15px;
         backdrop-filter: blur(6.5px);
+        -webkit-backdrop-filter: blur(6.5px);
     }
     .test-form::before {
         width: 80%;
