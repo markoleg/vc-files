@@ -799,6 +799,9 @@ output#res-num {
         margin-bottom: 20px;
         gap: 5px;
     } 
+    .to-full svg {
+        width: 16px;
+    }
     .divider {
         display: none;
     }
