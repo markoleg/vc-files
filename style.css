@@ -23,6 +23,9 @@ header {
     padding: 20px 0;
     height: 100px;
 }
+.header-wrp a img {
+    height: 100%;
+}
 @media (max-width:767px) {
     .header-wrp {
         height: 60px;
