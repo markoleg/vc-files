@@ -122,6 +122,14 @@ header {
     gap: 30px;
 }
 @media (max-width:767px) {
+    .intro-share-links {
+        right: 20px;
+        font-size: 10px;
+    }
+    .share-links-wrp svg {
+        height: 24px;
+        width: 24px;
+    }
     .intro-wrp {
         max-width: 100%;
     }
