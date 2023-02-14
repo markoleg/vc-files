@@ -106,7 +106,7 @@ header {
 .intro-share-links {
     position: absolute;
     top: 0;
-    right: 0;
+    right: 20px;
     font-size: 14px;
     line-height: 150%;
     text-align: right;
@@ -319,6 +319,7 @@ header {
     font-size: 30px;
     line-height: 150%;
     margin-bottom: 30px;
+    max-width: 70%;
 }
 
 #weight, #height {
@@ -476,6 +477,7 @@ output#res-num {
         padding-left: 32px;
         font-size: 18px;
         margin-bottom: 10px;
+        max-width: 100%;
     }
     .button {
         width: 100%;
@@ -703,7 +705,7 @@ output#res-num {
     transition: all 1s;
     height: 100%;
     position: fixed;
-    top: 400px;
+    top: 32%;
 }
 .ellipses {
     position: relative;

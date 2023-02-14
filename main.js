@@ -213,27 +213,7 @@ $('input').click(function () {
     else if (expl.innerHTML.indexOf("Ожиріння") != -1) {
         dres += 2;
     }
-    // if (btn5.classList.contains('btn-act')) {
-    //     btn5.onclick = function(){
-    //         swiper.slideNext();
-    //         if (expl.innerHTML.indexOf("недостатня") != -1) {
-    //             dres += 2;
-    //             result.innerHTML = dres;
-    //         }
-    //         else if (expl.innerHTML.indexOf("нормі") != -1) {
-    //             dres += 1;
-    //             result.innerHTML = dres;
-    //         }
-    //         else if (expl.innerHTML.indexOf("надлишкова") != -1) {
-    //             dres += 1;
-    //             result.innerHTML = dres;
-    //         }
-    //         else if (expl.innerHTML.indexOf("Ожиріння") != -1) {
-    //             dres += 2;
-    //             result.innerHTML = dres;
-    //         }
-    //     }
-    // };
+
 
 // 6question 
     let btn6 = document.querySelector('#btn-6');
@@ -261,7 +241,7 @@ $('input').click(function () {
         dres += 3;
     }
     if (dwoman[7].checked) {
-        dres += 2;
+        dres += 1;
     }
     if (dwoman[8].checked) {
         dres += 1;
@@ -311,7 +291,7 @@ $('input').click(function () {
         dres += 3;
     }
     if (dman[7].checked) {
-        dres += 2;
+        dres += 1;
     }
     if (dman[8].checked) {
         dres += 1;
