@@ -466,10 +466,10 @@ output#res-num {
         width: 100%;
         box-shadow: none;
         padding: 15px;
-        backdrop-filter: blur(2.5px);
+        backdrop-filter: blur(6.5px);
     }
     .test-form::before {
-        width: 75%;
+        width: 80%;
         left: 0;
         right: 0;
         margin-left: auto;
