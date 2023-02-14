@@ -107,6 +107,12 @@ header {
     position: absolute;
     top: 0;
     right: 0;
+    font-size: 14px;
+    line-height: 150%;
+    text-align: right;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #282E33;
 }
 .intro-section .container {
     position: relative;
