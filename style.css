@@ -660,6 +660,7 @@ output#res-num {
     padding-bottom: 10px;
     outline: none;
     color: #282E33;
+    border-radius: 0;
 }
 .contact-form-inp input::placeholder {
     color: #8A97A0;
