@@ -19,13 +19,14 @@ header {
 }
 .header-wrp {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     padding: 20px 0;
     height: 100px;
 }
 .header-wrp a {
     display: flex;
     justify-content: flex-end;
+    margin-left: auto;
 }
 .header-wrp a img {
     height: 100%;
