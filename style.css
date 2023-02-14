@@ -25,6 +25,7 @@ header {
 }
 .header-wrp a img {
     height: 100%;
+    margin-left: auto;
 }
 @media (max-width:767px) {
     .header-wrp {
