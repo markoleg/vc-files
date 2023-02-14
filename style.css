@@ -15,13 +15,17 @@
 }
 header {
 
-    width: 100vw;
+    width: 100%;
 }
 .header-wrp {
     display: flex;
     justify-content: space-between;
     padding: 20px 0;
     height: 100px;
+}
+.header-wrp a {
+    display: flex;
+    justify-content: flex-end;
 }
 .header-wrp a img {
     height: 100%;
