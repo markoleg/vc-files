@@ -66,7 +66,7 @@ header {
 .intro-btn {
     font-style: normal;
     font-weight: 600;
-    font-size: 30px;
+    font-size: 26px;
     line-height: 150%;
     border-radius: 40px;
     width: 250px;
@@ -343,6 +343,7 @@ header {
     letter-spacing: 0.03em;
     outline:none;
     background: transparent;
+    border-radius: 0;
 }
 #weight::placeholder  , #height::placeholder   {
     letter-spacing: 0.03em;
@@ -398,7 +399,7 @@ output#res-num {
 #res-expl {
     position: absolute;
     bottom: 0;
-    transform: translateX(-50%);
+    /* transform: translateX(-50%); */
     white-space: nowrap;
     font-weight: 400;
     font-size: 18px;
@@ -465,6 +466,7 @@ output#res-num {
         width: 100%;
         box-shadow: none;
         padding: 15px;
+        backdrop-filter: blur(2.5px);
     }
     .test-form::before {
         width: 75%;
@@ -511,7 +513,7 @@ output#res-num {
     }
     #res-expl {
         font-size: 14px;
-        white-space: normal;
+        /* white-space: normal; */
     }
 }
 
@@ -779,7 +781,8 @@ output#res-num {
 @media (max-width:767px) {
     .body-res {
         background-image: url(static/res-bg-mob.png);
-        background-size: 100% 100%;
+        background-size: cover;
+        background-position: top;
     }
     .test-again {
         font-size: 12px;
