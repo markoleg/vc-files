@@ -485,10 +485,13 @@ output#res-num {
         font-size: 15px;
     }
     .q-head {
-        padding-left: 32px;
+        padding-left: 35px;
         font-size: 18px;
         margin-bottom: 10px;
         max-width: 100%;
+        box-sizing: border-box;
+        width: 100%;
+        text-align: left;
     }
     .button {
         width: 100%;
