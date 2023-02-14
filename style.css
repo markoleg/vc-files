@@ -103,7 +103,15 @@ header {
     top: -20px;
     cursor: pointer;
 }
-
+.intro-share-links {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.share-links-wrp {
+    display: flex;
+    gap: 30px;
+}
 @media (max-width:767px) {
     .intro-wrp {
         max-width: 100%;
