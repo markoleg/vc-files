@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
@@ -14,14 +14,14 @@
     <header>
         <div class="container">
             <div class="header-wrp">
-                <img src="../static/znaty_vchasno-logo.svg" alt="" srcset="">
-                <img src="../static/ivmed-logo.svg" alt="" srcset="">
+                <img src="static/znaty_vchasno-logo.svg" alt="" srcset="">
+                <img src="static/ivmed-logo.svg" alt="" srcset="">
             </div>
         </div>
     </header>
     <section class="results-section">
         <div class="container">
-                <a href="../tests.html" class="test-again">
+                <a href="tests.html" class="test-again">
                     <svg width="15" height="26" viewBox="0 0 15 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M13.0358 2.10713L1.85745 13.0713L13.0358 24.0354" stroke="#038FFF" stroke-width="3"
                             stroke-linecap="round" stroke-linejoin="round" />
@@ -29,12 +29,12 @@
                     пройти тест повторно
                 </a>
                 <a href="" class="res-share">
-                    <img src="../static/share.svg" alt="">
+                    <img src="static/share.svg" alt="">
                     поділитись<br>з близькими
                 </a>
                 <div class="res-wrp">
                     <div class="res-explain">
-                        <h1 class="res-head">Рівень ризику розвитку безпліддя – низький</h1>
+                        <h1 class="res-head">Рівень ризику розвитку безпліддя – <span class="level">низький</span></h1>
                         <div class="expl-txt">
                             Вітаємо! Ваш вік і стан здоров’я дозволяють мати високі шанси 
                             зачати дитину...
@@ -85,11 +85,11 @@
                     <div class="res-score-wrp">
                         <div class="ellipses-wrapper">
                             <div class="ellipses">
-                                <img src="../static/Ellipse 10.svg" alt="">
-                                <img src="../static/Ellipse 11.svg" alt="">
-                                <img src="../static/Ellipse 12.svg" alt="">
-                                <img src="../static/Ellipse 14.svg" alt="">
-                                <img src="../static/Ellipse 13.svg" alt="">
+                                <img src="static/Ellipse 10.svg" alt="">
+                                <img src="static/Ellipse 11.svg" alt="">
+                                <img src="static/Ellipse 12.svg" alt="">
+                                <img src="static/Ellipse 14.svg" alt="">
+                                <img src="static/Ellipse 13.svg" alt="">
                             </div>
                             <div class="res-score">
                                 <span class="result-score">6</span><span class="points">балів</span> 
@@ -114,10 +114,18 @@
     </script>
     <script>
         let resultscore = document.querySelector('.result-score');
+        let expltxt = document.querySelector('.expl-txt');
+        let expltxtfull = document.querySelector('.expl-txt-full');
+        let level = document.querySelector('.level');
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const score = urlParams.get('score');
+        const lvl = urlParams.get('lvl');
         resultscore.innerHTML = score;
+        if (lvl == 'middle') {
+            expltxt.innerHTML = 'Вам або вашій парі варто замислитися про репродуктивне здоров’я. Існує вірогідність ускладнень...';
+            expltxtfull.innerHTML = '<p>Вам або вашій парі варто замислитися про репродуктивне здоров’я. Існує вірогідність ускладнень у спробах завагітніти, адже з віком наші репродуктивні функції знижуються. Оптимальний вік жінки для народження дитини до 37 років, якщо у неї або її партнера немає проблем із репродуктивним здоров’ям. Навіть штучне запліднення має певні обмеження за віком. Аби стати батьками, рекомендуємо пройти обстеження та звернутися за консультацією репродуктолога. Краще дізнатися вчасно, щоби не було пізно.</p><br><p>Дізнатись більше про репродуктивне здоров’я можна за <a href="" class="med-link">посиланням</a>'
+        }
     </script>
 </body>
 </html>

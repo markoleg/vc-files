@@ -331,13 +331,13 @@ $('input').click(function () {
     if (btn7.classList.contains('btn-act')) {
         btn7.onclick = function(){
             if (dres == 6) {
-                window.location = "results/low.html" + "?score=" + dres
+                window.location = "result.html" + "?score=" + dres + "&lvl=low"
             }
             else if (dres >= 7 && dres <= 12 )  {
-                window.location = "https://www.google.com/search?q=%D1%81%D0%B5%D1%80%D0%B5%D0%B4%D0%BD%D1%96%D0%B9&sxsrf=AJOqlzUTnhmxZeDx03onUTIwjpWNa2lYCw%3A1675958702533&ei=rhnlY5-dIKvIrgS4so_wDg&ved=0ahUKEwifrP3Y6Ij9AhUrpIsKHTjZA-4Q4dUDCBA&uact=5&oq=%D1%81%D0%B5%D1%80%D0%B5%D0%B4%D0%BD%D1%96%D0%B9&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQ6BAgjECc6CwgAEIAEELEDEIMBOggIABCxAxCDAToRCC4QgAQQsQMQgwEQxwEQ0QM6CAgAEIAEELEDOggILhCxAxCDAToLCC4QgAQQsQMQgwE6CAguEIAEENQCOgUILhCABDoICC4QgAQQsQM6BwgAELEDEEM6BwguENQCEENKBAhBGABKBAhGGABQAFiEEGCmGmgAcAF4AIABmwGIAckGkgEDNS4zmAEAoAEBwAEB&sclient=gws-wiz-serp"
+                window.location = "result.html" + "?score=" + dres + "&lvl=middle"
             }
             else if (dres > 12 )  {
-                window.location = "https://www.google.com/search?q=%D0%B2%D0%B8%D1%81%D0%BE%D0%BA%D0%B8%D0%B9&sxsrf=AJOqlzXhKQo861y_jOxxqcUXGwcKKYwjEQ%3A1675958715770&ei=uxnlY93TLvGwrgSttbfQCA&ved=0ahUKEwidnaXf6Ij9AhVxmIsKHa3aDYoQ4dUDCBA&uact=5&oq=%D0%B2%D0%B8%D1%81%D0%BE%D0%BA%D0%B8%D0%B9&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzILCAAQgAQQsQMQgwEyDgguEIAEEMcBEK8BENQCMgQIABBDMggIABCABBCxAzIFCAAQgAQyBQgAEIAEMgUIABCABDIFCC4QgAQyBQgAEIAEMgUIABCABDoICAAQsQMQgwE6CwguENQCELEDEIAEOgYIABAKEEM6BAgAEAM6DgguELEDEIMBEMcBENEDOggILhCABBCxAzoFCAAQsQNKBAhBGABKBAhGGABQAFi1CmCHGWgAcAF4AIABvwGIAZIGkgEDNS4ymAEAoAEBwAEB&sclient=gws-wiz-serp"
+                window.location = "result.html" + "?score=" + dres + "&lvl=high"
             }
             
         }
