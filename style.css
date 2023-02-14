@@ -23,10 +23,10 @@ header {
     padding: 20px 0;
     height: 100px;
 }
-/* .header-wrp a {
-    display: inline-flex;
+.header-wrp a {
+    display: flex;
     justify-content: flex-end;
-} */
+}
 .header-wrp a img {
     height: 100%;
 }
