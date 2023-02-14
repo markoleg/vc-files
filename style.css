@@ -29,6 +29,7 @@ header {
 @media (max-width:767px) {
     .header-wrp {
         height: 60px;
+        width: 100%;
     }
 }
 /* intro */
