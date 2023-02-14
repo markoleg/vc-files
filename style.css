@@ -108,6 +108,9 @@ header {
     top: 0;
     right: 0;
 }
+.intro-section .container {
+    position: relative;
+}
 .share-links-wrp {
     display: flex;
     gap: 30px;
