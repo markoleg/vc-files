@@ -124,7 +124,10 @@ header {
 @media (max-width:767px) {
     .intro-share-links {
         right: 20px;
-        font-size: 10px;
+        font-size: 8px;
+    }
+    .share-links-wrp {
+        margin-bottom: 5px;
     }
     .share-links-wrp svg {
         height: 24px;
@@ -135,6 +138,8 @@ header {
     }
     .intro-head {
         font-size: 22px;
+        margin-top: 0;
+        padding-top: 60px;
     }
     .intro-txt {
         font-size: 15px;
