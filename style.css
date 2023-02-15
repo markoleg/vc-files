@@ -810,7 +810,7 @@ output#res-num {
     .res-wrp {
         display: flex;
         flex-direction: column-reverse;
-        /* gap: 60px; */
+        gap: 0;
     }
     .res-score-wrp {
         justify-content: center;
