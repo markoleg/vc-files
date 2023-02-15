@@ -36,6 +36,9 @@ header {
         height: 60px;
         width: 100%;
     }
+    .header-wrp a {
+        width: 128px;
+    }
 }
 /* intro */
 
