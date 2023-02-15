@@ -810,11 +810,12 @@ output#res-num {
     .res-wrp {
         display: flex;
         flex-direction: column-reverse;
-        gap: 60px;
+        /* gap: 60px; */
     }
     .res-score-wrp {
         justify-content: center;
         padding: 0;
+        margin-bottom: 60px;
     }
     .ellipses-wrapper {
         position: static;
