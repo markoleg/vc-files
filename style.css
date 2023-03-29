@@ -113,6 +113,7 @@ meter {
 
 * {
     font-family: 'Inter', sans-serif;
+    cursor: none;
 }
 
 
@@ -444,3 +445,15 @@ nav {
     height: 200px;
 }
 
+.cursor {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 999;
+}
+.click {
+    transform: rotate(30deg);
+    transform-origin: top right;
+}

@@ -253,6 +253,26 @@
         })
 
     </script>
+    <div class="cursor" id="cursor"><img src="static/mouse.png" alt=""></div>
+    <script>
+        // mouse
+
+var cursor = document.getElementById('cursor');
+document.addEventListener('mousemove', function(e){
+  var x = e.clientX;
+  var y = e.clientY;
+  cursor.style.left = x + 'px';
+  cursor.style.top = y + 'px';
+});
+
+document.addEventListener('mousedown', function(){
+  cursor.classList.add('click');
+});
+
+document.addEventListener('mouseup', function(){
+  cursor.classList.remove('click')
+});
+    </script>
 </body>
 
 </html>
