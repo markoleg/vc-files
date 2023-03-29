@@ -10,68 +10,247 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.css">
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"
+        integrity="sha512-AMl4wfwAmDM1lsQvVBBRHYENn1FR8cfOTpt8QVbb/P55mYOdahHD4LmHM1W55pNe3j/3od8ELzPf/8eNkkjISQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
-
-    <main  data-scroll-container>
-        <header>
-            <div class="container">
-                <div class="header-inner">
-                    <a href="/" class="logo">
-                        <div class="brand">WEBRARIUM</div>
-                        <div class="slogan">sites are born here</div>
-                    </a>
-                    <div class="brg">
-                        <div class="brg-line"></div>
-                        <div class="brg-line"></div>
-                        <div class="brg-line"></div>
-                    </div>
-                    <nav>
-                        <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                    </nav>
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <a href="/" class="logo">
+                    <svg width="152" height="18" viewBox="0 0 152 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M5.07955 17.4545L0 0H4.66193L7.29545 11.4375H7.44034L10.4489 0H14.25L17.2585 11.4631H17.4034L20.0455 0H24.6989L19.6278 17.4545H15.5625L12.4176 6.86932H12.2812L9.13636 17.4545H5.07955Z"
+                            fill="black" />
+                        <path
+                            d="M26.4418 17.4545V0H38.6122V3.42614H30.6605V7.00568H37.9901V10.4403H30.6605V14.0284H38.6122V17.4545H26.4418Z"
+                            fill="black" />
+                        <path
+                            d="M41.2543 17.4545V0H48.5327C49.8395 0 50.9332 0.184659 51.8139 0.553977C52.7003 0.923295 53.3651 1.44034 53.8082 2.10511C54.2571 2.76989 54.4815 3.53977 54.4815 4.41477C54.4815 5.07955 54.3423 5.6733 54.0639 6.19602C53.7855 6.71307 53.402 7.14205 52.9134 7.48295C52.4247 7.82386 51.8594 8.0625 51.2173 8.19886V8.36932C51.9219 8.40341 52.5724 8.59375 53.169 8.94034C53.7713 9.28693 54.2543 9.76989 54.6179 10.3892C54.9815 11.0028 55.1634 11.7301 55.1634 12.571C55.1634 13.5085 54.9247 14.3466 54.4474 15.0852C53.9702 15.8182 53.2798 16.3977 52.3764 16.8239C51.473 17.2443 50.3764 17.4545 49.0866 17.4545H41.2543ZM45.473 14.054H48.081C48.9957 14.054 49.669 13.8807 50.1009 13.5341C50.5384 13.1875 50.7571 12.7045 50.7571 12.0852C50.7571 11.6364 50.652 11.25 50.4418 10.9261C50.2315 10.5966 49.9332 10.3438 49.5469 10.1676C49.1605 9.9858 48.6974 9.89489 48.1577 9.89489H45.473V14.054ZM45.473 7.17614H47.8082C48.2685 7.17614 48.6776 7.09943 49.0355 6.94602C49.3935 6.79261 49.6719 6.57102 49.8707 6.28125C50.0753 5.99148 50.1776 5.64205 50.1776 5.23295C50.1776 4.64773 49.9702 4.1875 49.5554 3.85227C49.1406 3.51705 48.581 3.34943 47.8764 3.34943H45.473V7.17614Z"
+                            fill="black" />
+                        <path
+                            d="M57.1918 17.4545V0H64.402C65.7088 0 66.8367 0.235795 67.7855 0.707386C68.7401 1.1733 69.4759 1.84375 69.9929 2.71875C70.5099 3.58807 70.7685 4.61932 70.7685 5.8125C70.7685 7.02273 70.5043 8.05114 69.9759 8.89773C69.4474 9.73864 68.6974 10.3807 67.7259 10.8239C66.7543 11.2614 65.6037 11.4801 64.2741 11.4801H59.7145V8.15625H63.4901C64.1264 8.15625 64.6577 8.07386 65.0838 7.90909C65.5156 7.73864 65.8423 7.48295 66.0639 7.14205C66.2855 6.79545 66.3963 6.35227 66.3963 5.8125C66.3963 5.27273 66.2855 4.8267 66.0639 4.47443C65.8423 4.11648 65.5156 3.84943 65.0838 3.6733C64.652 3.49148 64.1207 3.40057 63.4901 3.40057H61.4105V17.4545H57.1918ZM67.0185 9.47727L71.3651 17.4545H66.7628L62.5014 9.47727H67.0185Z"
+                            fill="black" />
+                        <path
+                            d="M76.858 17.4545H72.3239L78.2131 0H83.8295L89.7188 17.4545H85.1847L81.0852 4.39773H80.9489L76.858 17.4545ZM76.2528 10.5852H85.7301V13.7898H76.2528V10.5852Z"
+                            fill="black" />
+                        <path
+                            d="M91.598 17.4545V0H98.8082C100.115 0 101.243 0.235795 102.192 0.707386C103.146 1.1733 103.882 1.84375 104.399 2.71875C104.916 3.58807 105.175 4.61932 105.175 5.8125C105.175 7.02273 104.911 8.05114 104.382 8.89773C103.854 9.73864 103.104 10.3807 102.132 10.8239C101.161 11.2614 100.01 11.4801 98.6804 11.4801C98.6804 11.4801 95.1697 12.919 94.1207 11.4801C93.3561 10.4312 94.1207 8.15625 94.1207 8.15625H97.8963C98.5327 8.15625 99.0639 8.07386 99.4901 7.90909C99.9219 7.73864 100.249 7.48295 100.47 7.14205C100.692 6.79545 100.803 6.35227 100.803 5.8125C100.803 5.27273 100.692 4.8267 100.47 4.47443C100.249 4.11648 99.9219 3.84943 99.4901 3.6733C99.0582 3.49148 98.527 3.40057 97.8963 3.40057H95.8168V17.4545H91.598ZM101.425 9.47727L105.771 17.4545H101.169L96.9077 9.47727H101.425Z"
+                            fill="black" />
+                        <path d="M111.707 0V17.4545H107.489V0H111.707Z" fill="black" />
+                        <path
+                            d="M124.915 0H129.126V11.2585C129.126 12.5597 128.816 13.6932 128.197 14.6591C127.577 15.6193 126.714 16.3636 125.606 16.892C124.498 17.4148 123.211 17.6761 121.745 17.6761C120.262 17.6761 118.967 17.4148 117.859 16.892C116.751 16.3636 115.89 15.6193 115.276 14.6591C114.663 13.6932 114.356 12.5597 114.356 11.2585V0H118.575V10.892C118.575 11.4943 118.705 12.0312 118.967 12.5028C119.234 12.9744 119.606 13.3438 120.083 13.6108C120.56 13.8778 121.114 14.0114 121.745 14.0114C122.376 14.0114 122.927 13.8778 123.398 13.6108C123.876 13.3438 124.248 12.9744 124.515 12.5028C124.782 12.0312 124.915 11.4943 124.915 10.892V0Z"
+                            fill="black" />
+                        <path
+                            d="M131.77 0H136.994L141.426 10.8068H141.631L146.062 0H151.287V17.4545H147.179V6.73295H147.034L142.841 17.3438H140.216L136.023 6.6733H135.878V17.4545H131.77V0Z"
+                            fill="black" />
+                    </svg>
+                </a>
+                <div class="brg">
+                    <div class="brg-line"></div>
+                    <div class="brg-line"></div>
+                    <div class="brg-line"></div>
                 </div>
+                <nav>
+                    <a href="#">work</a>
+                    <a href="#">about</a>
+                    <a href="#">contacts</a>
+                </nav>
             </div>
-        </header>
-        <section class="hero" ></section>
-        <section class="work-section" >
+        </div>
+    </header>
+    <main>
+
+        <section class="hero" style="background-image: url(static/temphero.jpg);">
+        </section>
+        <section class="work-section">
             <div class="container">
-                <div data-scroll data-scroll-speed="2">
-                    <svg class="work"  id="worksvg" viewBox="0 0 1638 473" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="work" id="worksvg" viewBox="0 0 1638 473" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M134.361 465.338L134.465 465.7H134.842H230.506H230.882L230.986 465.34L319.065 162.202H321.941L410.247 465.34L410.352 465.7H410.727H506.391H506.768L506.872 465.338L639.714 1.13756L639.896 0.5H639.233H532.007H531.612L531.521 0.884343L454.763 323.718H451.464L367.005 0.873455L366.908 0.5H366.522H274.711H274.326L274.228 0.872887L189.543 323.038H186.469L109.712 0.884112L109.62 0.5H109.226H2H1.33684L1.5193 1.13756L134.361 465.338ZM658.907 386.778L658.908 386.779C672.854 413.757 692.641 434.831 718.264 449.991L718.267 449.993C744.048 465.004 774.591 472.5 809.876 472.5C845.16 472.5 875.628 465.004 901.259 449.992L901.26 449.992C927.034 434.832 946.897 413.758 960.844 386.779L960.844 386.778C974.79 359.648 981.755 328.212 981.755 292.485C981.755 256.457 974.791 224.946 960.844 197.966C946.898 170.835 927.035 149.76 901.259 134.752C875.628 119.588 845.161 112.017 809.876 112.017C774.59 112.017 744.047 119.588 718.265 134.752C692.641 149.761 672.853 170.835 658.908 197.965C644.961 224.945 637.996 256.457 637.996 292.485C637.996 328.212 644.961 359.648 658.907 386.778ZM874.238 345.811L874.237 345.815C868.819 361.612 860.779 374.074 850.128 383.223C839.501 392.201 826.247 396.702 810.329 396.702C794.259 396.702 780.775 392.2 769.844 383.218C759.044 374.068 750.853 361.607 745.286 345.811C739.868 330.007 737.154 312.008 737.154 291.805C737.154 271.603 739.868 253.603 745.286 237.799C750.854 222.003 759.044 209.542 769.845 200.391C780.776 191.258 794.26 186.681 810.329 186.681C826.246 186.681 839.5 191.258 850.128 200.387C860.779 209.537 868.819 221.998 874.237 237.795L874.238 237.799C879.808 253.603 882.597 271.602 882.597 291.805C882.597 312.008 879.808 330.007 874.238 345.811ZM1043.55 465.2V465.7H1044.05H1140.62H1141.12V465.2V268.232C1141.12 254.105 1144.28 241.653 1150.57 230.859C1157.03 220.057 1165.73 211.66 1176.68 205.659L1176.68 205.658C1187.78 199.508 1200.39 196.428 1214.52 196.428C1221.15 196.428 1228.45 196.955 1236.45 198.01C1244.44 199.066 1250.69 200.271 1255.18 201.62L1255.83 201.813V201.141V115.463V115.073L1255.45 114.978C1251.19 113.914 1246.25 113.079 1240.65 112.473C1235.04 111.867 1229.81 111.564 1224.95 111.564C1205.35 111.564 1188.02 117.186 1172.97 128.434C1157.98 139.481 1147.31 155.782 1140.93 177.295H1138.17V117.05V116.55H1137.67H1044.05H1043.55V117.05V465.2ZM1402.33 248.693V1V0.5H1401.83H1305.26H1304.76V1V465.2V465.7H1305.26H1401.83H1402.33V465.2V354.852L1427.95 325.602L1522.47 465.48L1522.61 465.7H1522.88H1636H1636.95L1636.41 464.917L1500.91 267.892L1629.81 117.375L1630.51 116.55H1629.43H1518.57H1518.34L1518.19 116.728L1406.81 248.693H1402.33Z"
-                        stroke="black" />
-                    </svg>
+                        stroke="white" />
+                </svg>
+                <div class="works">
+                    <div class="vb-wrp">
+                        <div class="vb-card">
+                            <div class="vb-card-head">
+                                <div class="vb-projectname">
+                                    Embroidered with pain
+                                </div>
+                                <div class="vb-logos">
+                                    <div><img src="static/vb-logo.svg" alt=""></div>
+                                    <div><img src="static/vb-logo.svg" alt=""></div>
+                                    <div><img src="static/vb-logo.svg" alt=""></div>
+                                    <div><img src="static/vb-logo.svg" alt=""></div>
+                                    <div><img src="static/vb-logo.svg" alt=""></div>
+                                </div>
+                            </div>
+                            <div class="vb-card-body">
+                                <div class="vb-card-left">
+
+                                    <div class="vb-desc">
+                                        The project is dedicated to the psychological health of people who have suffered
+                                        from sexual violence during russia's war against Ukraine.
+                                    </div>
+                                    <div class="vb-video">
+                                        <div class="border"></div>
+                                        <video autoplay="" muted="" loop="" no-controls="" playsinline="true">
+                                            <source
+                                                src="https://user-images.githubusercontent.com/123087981/214298317-493a3251-d055-4c12-8783-31e145100c3e.webm"
+                                                type="video/webm">
+                                            <source
+                                                src="https://user-images.githubusercontent.com/123087981/214367947-df053291-2106-462f-9e81-dff37358c6e0.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                    </div>
+                                </div>
+                                <div class="vb-card-right">
+
+                                    <div class="vb-cloth">
+                                        <img src="static/cloth.png" alt="">
+                                    </div>
+                                    <div class="vb-link-wrp">
+
+                                        <a href="">live version</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <script>
+                            function videovb() {
+                                let videowrp = document.querySelector('.vb-video');
+                                let video = document.querySelector('.vb-video video');
+                                videowrp.style.height = video.offsetHeight + 40 + "px"
+                            }
+                            window.onload = videovb
+                            window.onresize = videovb
+                        </script>
+                    </div>
+                    <div class="works-bottom">
+                        <div class="works-card afh">
+                            <div class="works-card-info">
+                                <div class="works-card-info-head">
+                                    <div class="works-card-info-head-projectname">
+                                        Act for Health
+                                    </div>
+                                    <div class="works-card-info-head-projectlogo">
+                                        <img src="static/AfH-logo.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="works-card-descr">
+                                    Media guide on how to effectively communicate about non-communicable diseases and
+                                    healthy living </div>
+                                <div class="works-card-link">
+                                    <a href="">
+                                        live version
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="works-card-video">
+                                <video src="static/IMG_4561.MP4" autoplay muted loop></video>
+                            </div>
+                        </div>
+                        <div class="works-card percent">
+                            <div class="works-card-info">
+                                <div class="works-card-info-head">
+                                    <div class="works-card-info-head-projectname">100% LIFE</div>
+                                    <div class="works-card-info-head-projectlogo">
+                                        <img src="static/100Life-logo.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="works-card-descr">
+                                    Corporate site for the 100%LIFE network of clinics.
+                                </div>
+                                <div class="works-card-link">
+                                    <a href="">
+                                        live version
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="works-card-video">
+                                <video src="static/IMG_4561.MP4" autoplay muted loop></video>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
 
-                <div class="grid">
-                    <div>textst</div>
-                    <div data-scroll data-scroll-speed="2"><video src="static/re.mov" autoplay loop style="width: 100%;object-fit: cover;"></video></div>
-                    <div data-scroll data-scroll-speed="-1"><img src="static/2023-03-21 17.32 2.png" alt=""></div>
-                    <div>moretext</div>
-                </div>
             </div>
         </section>
-        <section class="hero" >
-            <video src="static/re.mov" autoplay loop style="width: 100%;object-fit: cover;"></video>
+        <!-- <section style="background: white; height: 100vh;"></section> -->
+
+        <section >
+            <div class="wrp1">
+                <div class="anim"></div>
+            </div>
         </section>
+        <!-- <section style="background: white; height: 100vh;"></section> -->
 
     </main>
 
+    <script src="scripts.js"></script>
     <script>
-        const scroller = new LocomotiveScroll({
-    el: document.querySelector("[data-scroll-container]"),
-    smooth: true
-});
+        gsap.registerPlugin(ScrollTrigger);
+
+
+        gsap.to("#worksvg", {
+            scrollTrigger: {
+                trigger: "#worksvg",
+                start: "bottom bottom",
+                // toggleActions: "play pause resume none",
+                markers: false,
+                scrub: true,
+            },
+            top: "-20vh",
+            left: "-3vw",
+        })
+        gsap.from(".vb-wrp", {
+            scrollTrigger: {
+                trigger: "#worksvg",
+                start: "top bottom",
+                // toggleActions: "play pause resume none",
+                markers: false,
+                scrub: true,
+            },
+            x: "-100%"
+        })
+        gsap.from(".afh", {
+            scrollTrigger: {
+                trigger: ".vb-wrp",
+                start: "top bottom",
+                // toggleActions: "play pause resume none",
+                markers: false,
+                scrub: true,
+            },
+            y: "100%"
+        })
+        gsap.from(".percent", {
+            scrollTrigger: {
+                trigger: ".vb-wrp",
+                start: "top bottom",
+                // toggleActions: "play pause resume none",
+                markers: false,
+                scrub: true,
+            },
+            x: "100%"
+        })
+        gsap.to("body", {
+            scrollTrigger: {
+                trigger: ".percent",
+                start: "top bottom",
+                // toggleActions: "play pause resume none",
+                markers: true,
+                scrub: true,
+            },
+            background: '#ff0000'
+        })
+
     </script>
-    <!-- <script src="scripts.js"></script> -->
 </body>
 
 </html>

@@ -103,8 +103,10 @@ meter {
 
 
 :root {
-    --main: #24656A;
-    --likewht: aliceblue; 
+    --main: #507A49;
+    --white: white; 
+    --black: black;
+    --grey: #303030;
 }
 
 
@@ -121,17 +123,47 @@ meter {
     margin-inline: auto;
 }
 
-
-
+html {
+    overflow-x: hidden;
+}
+body {
+    background-color: var(--grey);
+    color: var(--white);
+}
 
 
 /* header */
 header {
     height: 75px;
-    background-color: var(--main);
+    background-color: var(--white);
     display: flex;
     align-items: center;
+    position: relative;
+    z-index: 1;
 }
+header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 15px;
+    border-radius: 50%;
+    transform: translateY(50%);
+    background-color: var(--white);
+    animation: ellipse 2s ease-in-out infinite;
+}
+@keyframes ellipse {
+    0% {
+        height: 15px;
+    }
+    50% {
+        height: 35px;
+    }
+    100% {
+        height: 15px;
+    }
+}
+
 .header-inner {
     display: flex;
     justify-content: space-between;
@@ -141,7 +173,7 @@ header {
     display: inline-flex;
     flex-direction: column;
     align-items: center;
-    color: var(--likewht);
+    color: var(--black);
 }
 .brand {
     font-style: normal;
@@ -155,41 +187,264 @@ header {
 .brg {
     display: flex;
     flex-direction: column;
-    width: 40px;
-    height: 40px;
+    width: 25px;
+    height: 25px;
     justify-content: space-between;
+    display: none;
 }
 .brg .brg-line {
-    background: var(--likewht);
-    height: 6px;
-    border-radius: 5px;
+    background: var(--black);
+    height: 3px;
+    border-radius: 10px;
 }
 nav {
-    display: none;
+    display: inline-flex;
+    justify-content: flex-end;
+    gap: 10vw;
+    margin-left: auto;
+    color: var(--black);
 }
 .hero {
     height: calc(100vh - 75px);
-    background-color: antiquewhite;
+    position: relative;
 }
+
+
+
+
+
+
+
+
+
 .work-section {
-    height: 100vh;
+    position: relative;
+    background-size: cover;
+    margin-top: -17vh;
+    padding-top: 15vh;
+    background-position: center center;
 }
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    column-gap: 20px;
+.work {
+    width: 50%;
+    position: absolute;
+    top: 20vh;
+    z-index: 0;
 }
 .work path {
-    stroke: black;
+    stroke: transparent;
 }
 .work.animate path {
     stroke-dasharray: 3442;
-    stroke-dashoffset: 0;
-    animation: work 5s linear;
-    stroke: black;
+    stroke-dashoffset: 2;
+    animation: work 1s linear;
+    stroke: var(--white);
 }
 @keyframes work {
     0% {
         stroke-dashoffset: 3910;
     }
 }
+
+.workwave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.works {
+    position: relative;
+    z-index: 1;
+}
+.vb-wrp {
+    width: 100%;
+}
+.vb-card {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left: auto;
+    background-color: var(--main);
+    border-radius: 8px;
+    padding: 20px;
+}
+.vb-card-head {
+    display: flex;
+}
+.vb-card-body {
+    display: flex;
+}
+.vb-card-left {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--white);
+    width: 60%;
+}
+.vb-card-right {
+    width: 40%;
+}
+.vb-projectname {
+    border-right: 1px solid var(--white);
+    border-top: 1px solid var(--white);
+    border-left: 1px solid var(--white);
+    font-weight: 700;
+    font-size: 28px;
+    display: flex;
+    justify-content: center;
+    padding: 2vw;
+    width: 60%;
+}
+.vb-desc {
+    border-bottom: 1px solid var(--white);
+    padding: 2vw;
+}
+.vb-video {
+    position: relative;
+}
+.vb-video video {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 0;
+    width: 47vw;
+    border-radius: 8px;
+}
+.border {
+    height: 100%;
+    border-left: 1px solid var(--white);
+    position: absolute;
+    left: -1px;
+    z-index: 1;
+}
+.vb-card-right {
+    border-top: 1px solid var(--white);
+    border-right: 1px solid var(--white);
+    border-bottom: 1px solid var(--white);
+    display: flex;
+    flex-direction: column;
+}
+.vb-logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    border-right: 1px solid var(--white);
+    border-top: 1px solid var(--white);
+    padding: 2vw;
+    width: 40%;
+}
+.vb-cloth img {max-height: 400px;}
+.vb-cloth {
+    padding: 2vw;
+    border-bottom: 1px solid var(--white);
+    display: grid;
+    place-items: center;
+}
+.vb-link-wrp {
+    padding: 2vw;
+    display: flex;
+    flex-grow: 1;
+}
+.vb-link-wrp a {
+    margin-top: auto;
+}
+.works-bottom {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+.works-card {
+    border-radius: 8px;
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+}
+
+.works-card-video {
+    max-width: 430px;
+    flex-shrink: 1;
+    display: flex;
+}
+.works-card-video video {
+    width: 100%;
+    border-radius: 8px;
+}
+.works-card-info {
+    flex-grow: 1;
+    width: 100%;
+    position: relative;
+    padding: 20px 0 20px 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: var(--main);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.works-card-info-head {
+    display: flex;
+    align-items: stretch;
+}
+.works-card-info-head-projectname {
+    font-weight: 700;
+    font-size: 28px;
+    border-right: 1px solid var(--white);
+    border-bottom: 1px solid var(--white);
+    display: flex;
+    align-items: center;
+    width: 75%;
+}
+.works-card-info-head-projectlogo {
+    border-bottom: 1px solid var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 25%;
+}
+.works-card-info-head-projectlogo {
+    padding: 2vw;
+}
+.works-card-descr {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    border-bottom: 1px solid var(--white);
+    min-height: 30%;
+    padding: 2vw 2vw 2vw 0;
+}
+.works-card-link {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    padding-bottom: 2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    border-bottom: 1px solid var(--white);
+    flex-grow: 1;
+}
+.works-card-link a {
+    margin-top: auto;
+}
+
+
+
+
+.wrp1 {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(static/777.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.anim {
+    background-color: #ff0000;
+    width: 200px;
+    height: 200px;
+}
+
