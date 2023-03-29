@@ -219,10 +219,6 @@ nav {
 
 .work-section {
     position: relative;
-    background-size: cover;
-    margin-top: -17vh;
-    padding-top: 15vh;
-    background-position: center center;
 }
 .work {
     width: 50%;

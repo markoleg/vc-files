@@ -242,12 +242,14 @@
         gsap.to("body", {
             scrollTrigger: {
                 trigger: ".percent",
-                start: "top bottom",
-                // toggleActions: "play pause resume none",
+                start: "top 80%",
+                end: "-50% 40%",
+                // toggleActions: "play pause reverse restart",
                 markers: true,
                 scrub: true,
             },
-            background: '#ff0000'
+            background: '#fff',
+            duration: 4,
         })
 
     </script>
