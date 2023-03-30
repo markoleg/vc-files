@@ -65,7 +65,11 @@
     </header>
     <main>
 
-        <section class="hero" style="background-image: url(static/temphero.jpg);">
+        <section class="hero">
+            <video autoplay muted loop class="hero-video">
+                <source src="static/hhh.webm" >
+            </video>
+            <h1>Sites are born here</h1>
         </section>
         <section class="work-section">
             <div class="container">
@@ -152,7 +156,7 @@
                                 </div>
                             </div>
                             <div class="works-card-video">
-                                <video src="static/IMG_4561.MP4" autoplay muted loop></video>
+                                <video src="" autoplay muted loop></video>
                             </div>
                         </div>
                         <div class="works-card percent">
@@ -173,7 +177,7 @@
                                 </div>
                             </div>
                             <div class="works-card-video">
-                                <video src="static/IMG_4561.MP4" autoplay muted loop></video>
+                                <video src="" autoplay muted loop></video>
                             </div>
                         </div>
 
@@ -253,26 +257,26 @@
         })
 
     </script>
-    <div class="cursor" id="cursor"><img src="static/mouse.png" alt=""></div>
-    <script>
+    <!-- <div class="cursor" id="cursor"><img src="static/mouse.png" alt=""></div> -->
+    <!-- <script>
         // mouse
 
-var cursor = document.getElementById('cursor');
-document.addEventListener('mousemove', function(e){
-  var x = e.clientX;
-  var y = e.clientY;
-  cursor.style.left = x + 'px';
-  cursor.style.top = y + 'px';
-});
+        var cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', function(e){
+        var x = e.clientX;
+        var y = e.clientY;
+        cursor.style.left = x + 'px';
+        cursor.style.top = y + 'px';
+        });
 
-document.addEventListener('mousedown', function(){
-  cursor.classList.add('click');
-});
+        document.addEventListener('mousedown', function(){
+        cursor.classList.add('click');
+        });
 
-document.addEventListener('mouseup', function(){
-  cursor.classList.remove('click')
-});
-    </script>
+        document.addEventListener('mouseup', function(){
+        cursor.classList.remove('click')
+        });
+    </script> -->
 </body>
 
 </html>

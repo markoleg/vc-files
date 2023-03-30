@@ -113,9 +113,8 @@ meter {
 
 * {
     font-family: 'Inter', sans-serif;
-    cursor: none;
+    /* cursor: none; */
 }
-
 
 /* styles */
 .container {
@@ -209,7 +208,21 @@ nav {
     height: calc(100vh - 75px);
     position: relative;
 }
+.hero-video {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.hero h1 {
+    position: absolute;
+    margin: 0 5%;
 
+    bottom: 10vh;
+    font-weight: 800;
+    font-size: 7vw;
+    text-transform: uppercase;
+}
 
 
 
@@ -445,7 +458,7 @@ nav {
     height: 200px;
 }
 
-.cursor {
+/* .cursor {
     width: 50px;
     height: 50px;
     position: fixed;
@@ -456,4 +469,4 @@ nav {
 .click {
     transform: rotate(30deg);
     transform-origin: top right;
-}
+} */
