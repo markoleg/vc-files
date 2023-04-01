@@ -212,11 +212,12 @@ nav {
     position: absolute;
     bottom: 0;
     left: 0;
+    height: 100%;
+    object-fit: cover;
 }
 .hero h1 {
     position: absolute;
     margin: 0 5%;
-
     bottom: 10vh;
     font-weight: 800;
     font-size: 7vw;
@@ -232,30 +233,41 @@ nav {
 
 .work-section {
     position: relative;
-    padding: 15vh 0;
+    /* padding: 15vh 0; */
 }
-.work {
-    width: 50%;
-    position: absolute;
-    top: 20vh;
-    z-index: 0;
+
+
+.r-line {
+    display: flex;
+    width: 100%;
+    -webkit-text-stroke: 1px var(--white);
+    color: transparent;
+    font-size: 33px;
 }
-.work path {
-    stroke: transparent;
+.r-line div {
+    animation: work 20s -20s linear infinite;
+    will-change: transform;
+    white-space: nowrap;
 }
-.work.animate path {
-    stroke-dasharray: 3442;
-    stroke-dashoffset: 2;
-    animation: work 1s linear;
-    stroke: var(--black);
+.r-line div:nth-child(2) {
+    animation: work2 20s -10s linear infinite;
 }
 @keyframes work {
     0% {
-        stroke-dashoffset: 3910;
-    }
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
 }
-
-
+@keyframes work2 {
+    0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-200%);
+      }
+}
 .works {
     position: relative;
     z-index: 1;
@@ -265,7 +277,7 @@ nav {
 }
 .vb-card {
     display: grid;
-    grid-template-columns: 65% auto;
+    grid-template-columns: 70% auto;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0px 4px 20px 9px rgba(6, 6, 6, 0.46);
@@ -332,7 +344,7 @@ nav {
     border-radius: 40%;
 }
 .projects-wrp {
-    margin: 5vw 0 0;
+    margin: 2vw 0 0;
     display: flex;
     align-items: flex-start;
 }
@@ -415,14 +427,14 @@ nav {
 .dark-l {
     width: 40vw;
     height: 40vw;
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, var(--main), #23d5ab);
+    background: linear-gradient(-45deg, #ee7752, #FFFB94, var(--main), #23d5ab);
     background-size: 300% 300%;
     border-radius: 50%;
     filter: blur(80px);
     position: fixed;
     top: 0;
     left: 0;
-    z-index: -2;
+    z-index: -99;
     animation: gradient 5s ease infinite;
 }
 @keyframes gradient {
@@ -448,16 +460,29 @@ nav {
 
 
 .ben {
-    padding: 10vh;
+    margin-top: -10vh;
+    padding: 30vh 0 10vh;
+    background: var(--white);
 }
 
 .ben h2{
     font-style: normal;
     font-weight: 600;
     font-size: 48px;
-    line-height: 58px;
     text-align: center;
-    color: #000000;}
+    color: #000000;
+    margin-bottom: 20vh;
+}
+
+.stack {
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    place-items: center;
+    color: var(--black);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+}
 
 
 
@@ -466,9 +491,7 @@ nav {
 
 
 
-
-
-/* .cursor {
+.cursor {
     width: 50px;
     height: 50px;
     position: fixed;
@@ -479,4 +502,4 @@ nav {
 .click {
     transform: rotate(30deg);
     transform-origin: top right;
-} */
+}
