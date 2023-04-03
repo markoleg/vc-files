@@ -187,11 +187,11 @@
                                     </a> 
                                 </div>
                             </div>
-                            <div class="project-video">
-                                <video autoplay muted loop>
-                                    <source src="static/percent-video.webm">
-                                </video>
-                            </div>
+                            
+                            <video autoplay muted loop class="project-video">
+                                <source src="static/percent-video.webm">
+                            </video>
+                            
                         </div>
                         <div class="project-card afh">
                             <div class="project-info">
@@ -210,11 +210,11 @@
                                     </a> 
                                 </div>
                             </div>
-                            <div class="project-video">
-                                <video autoplay muted loop>
-                                    <source src="static/afh-video.webm">
-                                </video>
-                            </div>
+                            
+                            <video autoplay muted loop class="project-video">
+                                <source src="static/afh-video.webm">
+                            </video>
+                            
                         </div>
                     </div>
                 </div>
@@ -224,7 +224,7 @@
         <section class="ben">
             <div class="container">
                 <h2>
-                    We create and support the best technical solutions for<br>website development and digital advertising campaigns
+                    We create and support the best technical solutions for website development and digital advertising campaigns
                 </h2>
                 <div class="stack">
                     <div class="stack-logo"><img src="static/stack/Django.png" alt=""></div>
@@ -240,7 +240,46 @@
             </div>
 
         </section>
-        <section class="partners"></section>
+        <section class="partners">
+            <div class="container">
+                <div class="partners-wrp">
+                    <h2>Here are some of our satisfied customers</h2>
+                    <div class="partners-logos">
+                        <div class="hid"></div>
+                        <div class="partner-logo"><img src="static/partners/100Life-logo.png" alt=""><span>&#128154;</span></div>
+                        <div class="partner-logo"><img src="static/partners/afh.png" alt=""><span>&#128151;</span></div>
+                        <div class="partner-logo"><img src="static/partners/arterium-logo.png" alt=""><span style="color: red;">&#9829;</span></div>
+                        <div class="partner-logo"><img src="static/partners/GDSkills_Logo_white.png" alt=""><span>&#128313;</span></div>
+                        <div class="partner-logo"><img src="static/partners/kmono-logo-mono_816x166.png" alt=""><span>&#9995;</span></div>
+                        <div class="partner-logo"><img src="static/partners/LogobUCLCR.png" alt=""><span>&#128155;</span></div>
+                        <div class="partner-logo"><img src="static/partners/lvbss.png" alt=""><span>&#127763;</span></div>
+                        <div class="partner-logo"><img src="static/partners/Moz.png" alt=""><span>&#129505;</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="about">
+            <img class="hands" src="static/hands.png" alt="">
+            <div class="container">
+                <div class="about-wrp">
+
+                    <h2>About</h2>
+                    <h3>There is a point of contact where you are 100% sure - 
+                        it is exactly what you need. It's a crystal clear feeling of
+                        confidence and gratitude that can't be confused with anything else.
+                    </h3>
+                    <div class="toggle-wrp" onclick="toggle()">
+                        <img src="static/mrborges.png" alt="">
+                        <div class="borges-quote">
+                        In "La biblioteca de Babel" by Jorge Luis Borges, <br><br>
+                        there is a main law: there are no two same books in the library. 
+                        At Webrarirum, we adhere to the same principle - each project is unique.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
     </main>
 
     <!-- <script src="scripts.js"></script> -->
@@ -248,17 +287,7 @@
         gsap.registerPlugin(ScrollTrigger);
 
 
-        gsap.to("#worksvg", {
-            scrollTrigger: {
-                trigger: "#worksvg",
-                start: "bottom bottom",
-                // toggleActions: "play pause resume none",
-                markers: false,
-                scrub: true,
-            },
-            top: "-27vh",
-            left: "-3vw",
-        })
+
         gsap.from(".vb-wrp", {
             scrollTrigger: {
                 trigger: ".vb-wrp",
@@ -348,6 +377,14 @@
         document.addEventListener('mouseup', function(){
         cursor.classList.remove('click')
         });
+    </script>
+    <script>
+        let toggles = document.querySelectorAll('.toggle-wrp');
+        for (const toggle of toggles) {
+            toggle.addEventListener('click', function handleClick() {
+                toggle.classList.toggle('toggle-active');
+            });
+            }
     </script>
 </body>
 

@@ -106,13 +106,15 @@ meter {
     --main: #507A49;
     --white: white; 
     --black: black;
+
+    --index: calc(1vw + 1vh);
 }
 
 
 
 * {
     font-family: 'Inter', sans-serif;
-    /* cursor: none; */
+    cursor: none!important;
 }
 
 /* styles */
@@ -307,7 +309,7 @@ nav {
     border-left: 1px solid var(--white);
     border-bottom: 1px solid var(--white);
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1.5vw;
 }
 .vb-logos { 
     grid-area: 1 / 2 / 2 / 3;
@@ -322,6 +324,7 @@ nav {
     grid-area: 2 / 1 / 3 / 2; 
     border-bottom: 1px solid var(--white);
     border-left: 1px solid var(--white);
+    font-size: 1.2vw;
 }
 .cloth { 
     grid-area: 2 / 2 / 4 / 3; 
@@ -333,7 +336,7 @@ nav {
     grid-area: 3 / 1 / 4 / 2; 
     border-left: 1px solid var(--white);
     border-bottom: 1px solid var(--white);
-
+    font-size: 1.2vw;
 }
 .vb-link-wrp a { 
     display: flex;
@@ -381,7 +384,7 @@ nav {
     border-left: 1px solid var(--white);
     border-bottom: 1px solid var(--white);
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1.5vw;
 }
 .project-logo { grid-area: 1 / 2 / 2 / 3; 
     display: flex;
@@ -392,37 +395,211 @@ nav {
     border-bottom: 1px solid var(--white);
     border-left: 1px solid var(--white);
 }
+.project-logo img {
+    height: 3vw;
+}
 .project-descr { grid-area: 2 / 1 / 3 / 3; 
     border-right: 1px solid var(--white);
     border-bottom: 1px solid var(--white);
     border-left: 1px solid var(--white);
+    font-size: 1.2vw;
 }
 .project-link-wrp { grid-area: 3 / 1 / 4 / 3; 
     border-right: 1px solid var(--white);
     border-bottom: 1px solid var(--white);
     border-left: 1px solid var(--white);
+    font-size: 1.2vw;
 }
 .project-link-wrp a {
     display: flex;
     align-items: center;
     gap: 1vw;
 }
+.project-card.afh .project-video  {
+    height: 35vw;
+}
+.project-card.percent .project-video  {
+    height: 30vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ben {
+    margin-top: -10vh;
+    padding: 30vh 0 10vh;
+    background: var(--white);
+}
+
+.ben h2{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 3vw;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 20vh;
+}
+
+.stack {
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    place-items: center;
+    color: var(--black);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+
 .partners {
     background: url(static/falling.gif);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    background-attachment: fixed;
+    padding: 10vh 0;
 }
-.project-video video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.partners-wrp {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10vw;
+    position: relative;
+    z-index: 1;
+}
+.partners h2 {
+    font-size: 6vw;
+    font-weight: 600;
+}
+.partners-logos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, calc(5*var(--index)));
+    gap: 20px;
+}
+.partner-logo {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.partner-logo img {
+    transition: all .1s;
+    max-width: 100%;
+    opacity: 1;
 }
 
-
-
-
-
+.partner-logo span {
+    display: none;
+    font-size: 2vw;
+}
+.partner-logo:hover img {
+   max-width: 0%;
+   opacity: 0;
+}
+.partner-logo:hover span {
+    display: inline-block;
+}
+.about {
+    background: url(static/borges-libra.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+    min-height: 100vh;
+}
+.hands {
+    position: absolute;
+    left: 0;
+    top: calc(-9*var(--index));
+    width: 56%;
+    z-index: 0;
+}
+.about .container {
+    position: relative;
+}
+.about-wrp {
+    display: flex;
+    flex-direction: column;
+    gap: 5vw;
+}
+.about h2 {
+    color: transparent;
+    -webkit-text-stroke: 2px var(--white);
+    font-size: 8vw;
+    font-weight: 700;
+    margin-left: auto;
+}
+.about h3::before {}
+.about h3 {
+    width: 72%;
+    font-size: 2vw;
+    margin-left: auto;
+}
+.toggle-wrp {
+    border-radius: 15vh;
+    display: inline-flex;
+    background-color: grey;
+    align-items: center;
+    transition: all .5s;
+    margin: 0 auto;
+    position: relative;
+    padding-right: 0;
+    padding-left: 40vw;
+    box-shadow: inset 0 0 0 4px var(--main);
+    overflow: hidden;
+}
+.toggle-wrp img {
+    width: 15vw;
+    position: relative;
+    z-index: 1;
+    transition: transform .5s;
+}
+.borges-quote {
+    max-width: 0;
+    padding: 0 2vw;
+    position: absolute;
+    right: 0;
+    z-index: 0;
+    font-size: 1.2vw;
+    /* opacity: 0; */
+    display: none;
+}
+.toggle-wrp.toggle-active {
+    padding-right: 40vw;
+    padding-left: 0;
+    background-color: var(--black);
+}
+.toggle-wrp.toggle-active .borges-quote {
+    max-width: 40vw;
+    /* opacity: 1; */
+    display: block;
+}
+.toggle-wrp.toggle-active img {
+    transform: rotate(-360deg);
+}
+.cursor {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    transform: translate(-50%);
+    pointer-events: none;
+    z-index: 999;
+    transition: transform .5s;
+}
+.click {
+    transform: rotate(-30deg) translate(-50%);
+    transform-origin: bottom left;
+}
 
 .dark-l {
     width: 40vw;
@@ -450,56 +627,4 @@ nav {
 	100% {
 		background-position: 0% 50%;
 	}
-}
-
-
-
-
-
-
-
-
-.ben {
-    margin-top: -10vh;
-    padding: 30vh 0 10vh;
-    background: var(--white);
-}
-
-.ben h2{
-    font-style: normal;
-    font-weight: 600;
-    font-size: 48px;
-    text-align: center;
-    color: #000000;
-    margin-bottom: 20vh;
-}
-
-.stack {
-    display: grid;
-    grid-template-columns: repeat(7,1fr);
-    place-items: center;
-    color: var(--black);
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 17px;
-}
-
-
-
-
-
-
-
-
-.cursor {
-    width: 50px;
-    height: 50px;
-    position: fixed;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    z-index: 999;
-}
-.click {
-    transform: rotate(30deg);
-    transform-origin: top right;
 }
