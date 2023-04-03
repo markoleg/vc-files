@@ -126,6 +126,7 @@ meter {
 
 html {
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 body {
     background-color: var(--white);
@@ -139,8 +140,14 @@ header {
     background-color: var(--white);
     display: flex;
     align-items: center;
-    position: relative;
-    z-index: 1;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    top:0;
+    transition: all 1s;
+}
+.nav-up {
+    top: -75px;
 }
 header::after {
     content: "";

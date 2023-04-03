@@ -56,8 +56,8 @@
                     <div class="brg-line"></div>
                 </div>
                 <nav>
-                    <a href="#">work</a>
-                    <a href="#">about</a>
+                    <a href="#work">work</a>
+                    <a href="#about">about</a>
                     <a href="#">contacts</a>
                 </nav>
             </div>
@@ -71,7 +71,7 @@
             </video>
             <h1>Sites are born here</h1>
         </section>
-        <section class="work-section">
+        <section class="work-section" id="work">
             <div class="r-line">
                 <div>
                     <span>work </span>
@@ -258,7 +258,7 @@
                 </div>
             </div>
         </section>
-        <section class="about">
+        <section class="about" id="about">
             <img class="hands" src="static/hands.png" alt="">
             <div class="container">
                 <div class="about-wrp">
@@ -303,7 +303,7 @@
                 trigger: ".projects-wrp",
                 start: "top bottom",
                 end: "center center",
-                markers: true,
+                markers: false,
                 scrub: true,
             },
             y: "100%"
@@ -322,9 +322,9 @@
             scrollTrigger: {
                 trigger: ".ben",
                 start: "70% 80%",
-                end: "bottom top",
+                end: "bottom 20%",
                 // toggleActions: "play pause resume none",
-                markers: false,
+                markers: true,
                 scrub: true,
             },
             background: "#000"
@@ -384,6 +384,47 @@
             toggle.addEventListener('click', function handleClick() {
                 toggle.classList.toggle('toggle-active');
             });
+            }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script>
+            // Hide Header on on scroll down
+            var didScroll;
+            var lastScrollTop = 0;
+            var delta = 5;
+            var navbarHeight = $('header').outerHeight();
+
+            $(window).scroll(function (event) {
+                didScroll = true;
+            });
+
+            setInterval(function () {
+                if (didScroll) {
+                    hasScrolled();
+                    didScroll = false;
+                }
+            }, 250);
+
+            function hasScrolled() {
+                var st = $(this).scrollTop();
+
+                // Make sure they scroll more than delta
+                if (Math.abs(lastScrollTop - st) <= delta)
+                    return;
+
+                // If they scrolled down and are past the navbar, add class .nav-up.
+                // This is necessary so you never see what is "behind" the navbar.
+                if (st > lastScrollTop && st > navbarHeight) {
+                    // Scroll Down
+                    $('header').addClass('nav-up');
+                } else {
+                    // Scroll Up
+                    if (st + $(window).height() < $(document).height()) {
+                        $('header').removeClass('nav-up');
+                    }
+                }
+
+                lastScrollTop = st;
             }
     </script>
 </body>
