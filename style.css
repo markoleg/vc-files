@@ -127,12 +127,12 @@ meter {
 html {
     overflow-x: hidden;
     scroll-behavior: smooth;
+    scroll-padding: 10%;
 }
 body {
     background-color: var(--white);
     color: var(--white);
 }
-
 
 /* header */
 header {
@@ -213,7 +213,7 @@ nav {
     color: var(--black);
 }
 .hero {
-    height: calc(100vh - 75px);
+    height: 100vh;
     position: relative;
 }
 .hero-video {
@@ -517,17 +517,26 @@ nav {
 .partner-logo:hover span {
     display: inline-block;
 }
+
+
+
+
+
+
+
+
+
 .about {
     background: url(static/borges-libra.png);
     background-repeat: no-repeat;
     background-size: 100%;
     position: relative;
-    min-height: 100vh;
+    padding-bottom: 10vw;
 }
 .hands {
     position: absolute;
     left: 0;
-    top: calc(-9*var(--index));
+    top: calc(-8*var(--index));
     width: 56%;
     z-index: 0;
 }
@@ -546,11 +555,25 @@ nav {
     font-weight: 700;
     margin-left: auto;
 }
-.about h3::before {}
+.about h3::after {
+    content: "";
+    width: 15vw;
+    height: 15vw;
+    border-radius: 50%;
+    background-color: var(--main);
+    position: absolute;
+    top:-90%;
+    left: -9%;
+    z-index: -1;
+
+}
 .about h3 {
-    width: 72%;
+    width: 74%;
     font-size: 2vw;
     margin-left: auto;
+    position: relative;
+    z-index: 2;
+    margin-top: 5vw;
 }
 .toggle-wrp {
     border-radius: 15vh;
@@ -565,13 +588,18 @@ nav {
     box-shadow: inset 0 0 0 4px var(--main);
     overflow: hidden;
 }
-.toggle-wrp img {
+.toggle-wrp img, .we {
     width: 15vw;
+    height: 15vw;
     position: relative;
     z-index: 1;
     transition: transform .5s;
+    
 }
-.borges-quote {
+.toggle-wrp img {
+    filter: drop-shadow(0px 0px 44px rgba(0, 0, 0, 0.83));
+}
+.toggle-txt {
     max-width: 0;
     padding: 0 2vw;
     position: absolute;
@@ -580,20 +608,109 @@ nav {
     font-size: 1.2vw;
     /* opacity: 0; */
     display: none;
+    line-height: 140%;
 }
 .toggle-wrp.toggle-active {
     padding-right: 40vw;
     padding-left: 0;
     background-color: var(--black);
 }
-.toggle-wrp.toggle-active .borges-quote {
+.toggle-wrp.toggle-active .toggle-txt {
     max-width: 40vw;
     /* opacity: 1; */
     display: block;
 }
-.toggle-wrp.toggle-active img {
+.toggle-wrp.toggle-active img, .toggle-wrp.toggle-active .we {
     transform: rotate(-360deg);
 }
+
+.we {
+    border-radius: 15vh;
+    font-size: 6vw;
+    box-shadow: 0px 0px 44px rgba(0, 0, 0, 0.83);
+    background: radial-gradient(225.83% 225.83% at 114.57% -38.74%, #507A49 34.59%, #507A49 51.44%, #FFFFFF 100%);
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.toggle-txt span {
+    font-size: 1.5vw;
+    font-weight: 700;
+    text-decoration-line: underline;
+}
+
+
+
+
+
+
+
+footer {
+    background: var(--main);
+    padding: 5vh 0 2vh;
+}
+.footer-wrp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+}
+.f-logo {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 29px;
+}
+.contactus {
+    padding: 30px 120px;
+    background-color: var(--white);
+    color: #000000;
+    display: inline-flex;
+    border-radius: 60px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    transition: all 1s;
+}
+.contactus:hover {
+    -webkit-box-shadow: 0px 0px 40px 9px rgba(255,255,255,0.57);
+    -moz-box-shadow: 0px 0px 40px 9px rgba(255,255,255,0.57);
+    box-shadow: 0px 0px 40px 9px rgba(255,255,255,0.57);
+}
+
+.f-bot {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 100%;
+}
+.f-nav {
+    text-decoration: underline;
+}
+.f-nav{
+    display: flex;
+    justify-content: space-between;
+    gap: 10%;
+}
+.f-pages {
+    display: flex;
+    justify-content: end;
+    gap: 10%
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .cursor {
     width: 50px;
     height: 50px;

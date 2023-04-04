@@ -58,7 +58,7 @@
                 <nav>
                     <a href="#work">work</a>
                     <a href="#about">about</a>
-                    <a href="#">contacts</a>
+                    <a href="#contacts">contacts</a>
                 </nav>
             </div>
         </div>
@@ -269,11 +269,17 @@
                         confidence and gratitude that can't be confused with anything else.
                     </h3>
                     <div class="toggle-wrp" onclick="toggle()">
-                        <img src="static/mrborges.png" alt="">
-                        <div class="borges-quote">
+                        <img src="static/borges.png" alt="">
+                        <div class="toggle-txt">
                         In "La biblioteca de Babel" by Jorge Luis Borges, <br><br>
-                        there is a main law: there are no two same books in the library. 
-                        At Webrarirum, we adhere to the same principle - each project is unique.
+                        there is a <span>main law</span> : there are no two <span>same</span>  books in the library. 
+                        At Webrarirum, we adhere to the same principle - <span>each</span>  project is <span>unique</span>.
+                        </div>
+                    </div>
+                    <div class="toggle-wrp" onclick="toggle()">
+                        <div class="we">We</div>
+                        <div class="toggle-txt">
+                            are <span>hunting</span>  for that moment in our communication with <span>you</span>, as in the next steps, it becomes clear <span>where</span>  and <span>how</span>  we are heading. So let's get to <span>know</span>  each other!
                         </div>
                     </div>
                 </div>
@@ -281,6 +287,29 @@
 
         </section>
     </main>
+    <footer>
+        <div class="container">
+            <div class="footer-wrp">
+                <a class="f-logo" href="">Webrarirum</a>
+                <a class="contactus" id="contacts" href="mailto:olehmarkevych@gmail.com">CONTACT US</a>
+                <div class="f-bot">
+                    <div class="copyright">
+                        © 2023 Webrarium. All right reserved.
+                    </div>
+                    <div class="f-nav">
+                        <a href="">work</a>
+                        <a href="">contact</a>
+                        <a href="">about</a>
+                    </div>
+                    <div class="f-pages">
+                        <a href="">Privacy Policy</a>
+                        <a href="">Terms & Conditions </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
 
     <!-- <script src="scripts.js"></script> -->
     <script>
@@ -324,7 +353,7 @@
                 start: "70% 80%",
                 end: "bottom 20%",
                 // toggleActions: "play pause resume none",
-                markers: true,
+                markers: false,
                 scrub: true,
             },
             background: "#000"
