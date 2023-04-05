@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="overflow-x: hidden;">
 
 <head>
     <meta charset="UTF-8">
@@ -135,7 +135,7 @@
                 </div>
 
 
-            </div>
+            </div> 
             <div class="container">
                 <div class="works">
                     <div class="vb-wrp">
@@ -268,7 +268,7 @@
                         it is exactly what you need. It's a crystal clear feeling of
                         confidence and gratitude that can't be confused with anything else.
                     </h3>
-                    <div class="toggle-wrp" onclick="toggle()">
+                    <div class="toggle-wrp borges">
                         <img src="static/borges.png" alt="">
                         <div class="toggle-txt">
                         In "La biblioteca de Babel" by Jorge Luis Borges, <br><br>
@@ -276,7 +276,7 @@
                         At Webrarirum, we adhere to the same principle - <span>each</span>  project is <span>unique</span>.
                         </div>
                     </div>
-                    <div class="toggle-wrp" onclick="toggle()">
+                    <div class="toggle-wrp wewe">
                         <div class="we">We</div>
                         <div class="toggle-txt">
                             are <span>hunting</span>  for that moment in our communication with <span>you</span>, as in the next steps, it becomes clear <span>where</span>  and <span>how</span>  we are heading. So let's get to <span>know</span>  each other!
@@ -290,7 +290,7 @@
     <footer>
         <div class="container">
             <div class="footer-wrp">
-                <a class="f-logo" href="">Webrarirum</a>
+                <a class="f-logo" href="">Webrarium</a>
                 <a class="contactus" id="contacts" href="mailto:olehmarkevych@gmail.com">CONTACT US</a>
                 <div class="f-bot">
                     <div class="copyright">
@@ -314,7 +314,6 @@
     <!-- <script src="scripts.js"></script> -->
     <script>
         gsap.registerPlugin(ScrollTrigger);
-
 
 
         gsap.from(".vb-wrp", {
@@ -358,8 +357,30 @@
             },
             background: "#000"
         })
-
-
+        let tl1 = gsap.timeline(
+            {
+                scrollTrigger: {
+                    trigger: ".borges",
+                    start: "top center",
+                    end: "center top",
+                    toggleClass: "toggle-active",
+                    markers: false
+                }
+            }
+        );
+        let tl2 = gsap.timeline(
+            {
+                scrollTrigger: {
+                    trigger: ".wewe",
+                    start: "top center",
+                    end: "center top",
+                    toggleClass: "toggle-active",
+                    markers: false
+                }
+            }
+        );
+        
+            // blur
         gsap.set(".dark-l", {xPercent: -50, yPercent: -50});
 
         const ball = document.querySelector(".dark-l");
@@ -455,6 +476,12 @@
 
                 lastScrollTop = st;
             }
+    </script>
+    <script>
+        const html = document.querySelector("html");
+        window.onresize = () => {
+            html.style.overflowX = "hidden";
+        }
     </script>
 </body>
 

@@ -125,13 +125,13 @@ meter {
 }
 
 html {
-    overflow-x: hidden;
     scroll-behavior: smooth;
     scroll-padding: 10%;
 }
 body {
     background-color: var(--white);
     color: var(--white);
+    overflow-x: hidden;
 }
 
 /* header */
@@ -254,12 +254,12 @@ nav {
     font-size: 33px;
 }
 .r-line div {
-    animation: work 20s -20s linear infinite;
+    animation: work 40s -40s linear infinite;
     will-change: transform;
     white-space: nowrap;
 }
 .r-line div:nth-child(2) {
-    animation: work2 20s -10s linear infinite;
+    animation: work2 40s -20s linear infinite;
 }
 @keyframes work {
     0% {
@@ -661,6 +661,7 @@ footer {
     font-weight: 800;
     font-size: 24px;
     line-height: 29px;
+    text-transform: uppercase;
 }
 .contactus {
     padding: 30px 120px;
@@ -681,7 +682,7 @@ footer {
 
 .f-bot {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
     width: 100%;
 }
 .f-nav {
