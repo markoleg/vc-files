@@ -338,7 +338,7 @@
                 </div>
             </div>
         </section>
-        <section class="about" id="about">
+        <section class="about pc" id="about">
             <img class="hands" src="static/hands.png" alt="">
             <div class="container">
                 <div class="about-wrp">
@@ -357,7 +357,6 @@
                         </div>
                     </div>
                     <div class="form-wrp">
-                        <!-- <div class="we">We</div> -->
                         <div class="form-txt-top">
                             <span class="we">We</span>
                             are hunting for that moment in our communication with you,
@@ -370,6 +369,38 @@
                 </div>
             </div>
 
+        </section>
+        <section class="about-mob mob">
+            <img src="static/hands-mobv.png" alt="">
+            <div class="container">
+                <h2>
+                    <div>There is a point of contact where you are 100% sure -  it is exactly what you need.</div>
+                    <div>It's a crystal clear feeling of confidence 
+                    and gratitude that can't be confused with anything else</div>
+                </h2>
+            </div>
+            <div class="borges-mob">
+                <div class="borges-inner">
+                    <img src="static/borges.png" alt="">
+                    <div class="borges-txt-mob">
+                        In "La biblioteca de Babel" by Jorge Luis Borges, <br><br>
+                        there is a <span>main law</span> : there are no two <span>same</span>  books in the library. 
+                        At Webrarirum, we adhere to the same principle - <span>each</span>  project is <span>unique</span>.
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="form-wrp-mob">
+                    <div class="form-txt-top-mob">
+                        <span class="we">We</span>
+                        are hunting for that moment in our communication with you,
+                        as in the next steps, it becomes clear where and how we are heading.<br>
+                        <span class="form-txt-bot-mob">So let's get to know each other!</span>
+                    </div>
+                    <a href="" class="mailus-mob"><span>Email us</span></a>
+                    <a href="" class="callus-mob"><span>Call us</span></a>
+                </div>
+            </div>
         </section>
     </main>
     <footer>
@@ -488,25 +519,14 @@
         gsap.to(".ben", {
                 scrollTrigger: {
                     trigger: ".ben",
-                    start: "70% 80%",
-                    end: "bottom 20%",
+                    start: "bottom 75%",
+                    end: "bottom top",
                     // toggleActions: "play pause resume none",
-                    markers: false,
+                    markers: true,
                     scrub: true,
                 },
                 background: "#000"
             });
-            let tl2 = gsap.timeline(
-                {
-                    scrollTrigger: {
-                        trigger: ".borges",
-                        start: "top 80%",
-                        end: "top top",
-                        toggleClass: "toggle-active",
-                        markers: true
-                    }
-                }
-            );
         })
     </script>
     <script>
