@@ -321,6 +321,9 @@
 
         </section>
         <section class="partners">
+            <video autoplay muted loop class="video-bg">
+                <source src="static/fall-pc.mp4">
+            </video>
             <div class="container">
                 <div class="partners-wrp">
                     <h2>Here are some of our satisfied customers</h2>
@@ -339,7 +342,7 @@
             </div>
         </section>
         <section class="about pc" id="about">
-            <img class="hands" src="static/hands.png" alt="">
+            <img class="hands" src="static/hands.webp" alt="">
             <div class="container">
                 <div class="about-wrp">
 
@@ -349,7 +352,7 @@
                         confidence and gratitude that can't be confused with anything else.
                     </h3>
                     <div class="toggle-wrp borges">
-                        <img src="static/borges.png" alt="">
+                        <img src="static/borges.webp" alt="">
                         <div class="toggle-txt">
                         In "La biblioteca de Babel" by Jorge Luis Borges, <br><br>
                         there is a <span>main law</span> : there are no two <span>same</span>  books in the library. 
@@ -371,7 +374,7 @@
 
         </section>
         <section class="about-mob mob">
-            <img src="static/hands-mobv.png" alt="">
+            <img src="static/hands-mobv.webp" alt="">
             <div class="container">
                 <h2>
                     <div>There is a point of contact where you are 100% sure -  it is exactly what you need.</div>
@@ -381,7 +384,7 @@
             </div>
             <div class="borges-mob">
                 <div class="borges-inner">
-                    <img src="static/borges.png" alt="">
+                    <img src="static/borges.webp" alt="">
                     <div class="borges-txt-mob">
                         In "La biblioteca de Babel" by Jorge Luis Borges, <br><br>
                         there is a <span>main law</span> : there are no two <span>same</span>  books in the library. 
@@ -425,7 +428,7 @@
         </div>
 
     </footer>
-    <div class="cursor pc" id="cursor"><img src="static/mouse.png" alt=""></div>
+    <div class="cursor pc" id="cursor"><img src="static/mouse.webp" alt=""></div>
     <!-- <script src="scripts.js"></script> -->
     <script>
         gsap.registerPlugin(ScrollTrigger);
@@ -522,7 +525,7 @@
                     start: "bottom 75%",
                     end: "bottom top",
                     // toggleActions: "play pause resume none",
-                    markers: true,
+                    markers: false,
                     scrub: true,
                 },
                 background: "#000"
@@ -612,6 +615,13 @@
             nav.classList.toggle("nav-open");
             hamburger.classList.toggle("open");
          }
+    </script>
+    <script>
+        const mq = window.matchMedia( "(max-width: 850px)" );
+
+            if (mq.matches) {
+                document.querySelector('.video-bg source').src = "static/fall-mob.mp4"
+            }
     </script>
 </body>
 

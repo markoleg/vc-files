@@ -455,11 +455,21 @@ body {
 
 
 .partners {
-    background: url(static/falling.gif);
+    /* background: url(static/falling.gif);
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
+    background-attachment: fixed; */
     padding: 10vh 0;
+    position: relative;
+}
+.video-bg {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 .partners-wrp {
     display: grid;
@@ -514,7 +524,7 @@ body {
 
 
 .about {
-    background: url(static/borges-libra.png);
+    background: url(static/borges-libra.webp);
     background-repeat: no-repeat;
     background-size: 100%;
     position: relative;
@@ -989,7 +999,7 @@ footer {
         max-width: 90%;
     }
     .about-mob {
-        background-image: url(static/bottom-bg-mob.png);
+        background-image: url(static/bottom-bg-mob.webp);
         background-repeat: no-repeat;
         background-size: cover;
         padding-bottom: calc(3*var(--index));
