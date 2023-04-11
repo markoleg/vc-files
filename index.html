@@ -109,6 +109,7 @@
 
         <section class="hero">
             <video autoplay muted loop playsinline class="hero-video">
+                <source src="static/hhh.webm" >
                 <source src="static/hero.mp4" >
             </video>
             <h1>Sites are born here</h1>
@@ -231,7 +232,7 @@
                             </div>
                             
                             <video autoplay muted loop playsinline class="project-video">
-                                <source src="static/percent-video.webm">
+                                <source src="static/percent-video.mp4">
                             </video>
                             
                         </div>
@@ -254,7 +255,7 @@
                             </div>
                             
                             <video autoplay muted loop playsinline class="project-video">
-                                <source src="static/afh-video.webm">
+                                <source src="static/afh-video.mp4">
                             </video>
                             
                         </div>
@@ -267,7 +268,7 @@
             <div class="works-slider-wrp">
                 <div class="work-card">
                     <video autoplay muted loop class="project-video-mobile">
-                        <source src="static/percent-video.webm">
+                        <source src="static/vb-video.mp4">
                     </video>
                     <h3>
                         Embroidered with pain
@@ -278,7 +279,7 @@
                 </div>
                 <div class="work-card">
                     <video autoplay muted loop class="project-video-mobile">
-                        <source src="static/afh-video.webm">
+                        <source src="static/afh-video.mp4">
                     </video>
                     <h3>
                         Act for health
@@ -289,7 +290,7 @@
                 </div>
                 <div class="work-card">
                     <video autoplay muted loop class="project-video-mobile">
-                        <source src="static/percent-video.webm">
+                        <source src="static/percent-video.mp4">
                     </video>
                     <h3>
                         100% life
@@ -618,10 +619,25 @@
     </script>
     <script>
         const mq = window.matchMedia( "(max-width: 850px)" );
-
-            if (mq.matches) {
-                document.querySelector('.video-bg source').src = "static/fall-mob.mp4"
+        document.onreadystatechange = function(e)
+            {
+                if (document.readyState === 'complete')
+                {
+                    if (mq.matches) {
+                        document.querySelector('.video-bg source').src = "static/fall-mob.mp4"
+                    }
+                }
+            };
+            window.onresize = () => {
+                if (mq.matches) {
+                        document.querySelector('.video-bg source').src = "static/fall-mob.mp4"
+                    }
+                else {
+                    document.querySelector('.video-bg source').src = "static/fall-pc.mp4"
+                }
             }
+
+            
     </script>
 </body>
 
