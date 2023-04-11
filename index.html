@@ -331,13 +331,13 @@
                     <div class="partners-logos">
                         <div class="hid"></div>
                         <div class="partner-logo"><img src="static/partners/100Life-logo.png" alt=""><span>&#128154;</span></div>
-                        <div class="partner-logo"><img src="static/partners/afh.png" alt=""><span>&#128151;</span></div>
+                        <div class="partner-logo"><img src="static/partners/afh-logo.png" alt=""><span>&#128151;</span></div>
                         <div class="partner-logo"><img src="static/partners/arterium-logo.png" alt=""><span style="color: red;">&#9829;</span></div>
-                        <div class="partner-logo"><img src="static/partners/GDSkills_Logo_white.png" alt=""><span>&#128313;</span></div>
-                        <div class="partner-logo"><img src="static/partners/kmono-logo-mono_816x166.png" alt=""><span>&#9995;</span></div>
-                        <div class="partner-logo"><img src="static/partners/LogobUCLCR.png" alt=""><span>&#128155;</span></div>
-                        <div class="partner-logo"><img src="static/partners/lvbss.png" alt=""><span>&#127763;</span></div>
-                        <div class="partner-logo"><img src="static/partners/Moz.png" alt=""><span>&#129505;</span></div>
+                        <div class="partner-logo"><img src="static/partners/GDSkills-logo.png" alt=""><span>&#128313;</span></div>
+                        <div class="partner-logo"><img src="static/partners/kmono-logo.png" alt=""><span>&#9995;</span></div>
+                        <div class="partner-logo"><img src="static/partners/UCLCR-logo.png" alt=""><span>&#128155;</span></div>
+                        <div class="partner-logo"><img src="static/partners/lvbs-logo.png" alt=""><span>&#127763;</span></div>
+                        <div class="partner-logo"><img src="static/partners/Moz-logo.png" alt=""><span>&#129505;</span></div>
                     </div>
                 </div>
             </div>
@@ -367,8 +367,8 @@
                             as in the next steps, it becomes clear where and how we are heading.<br>
                             <span class="form-txt-bot">So let's get to know each other!</span>
                         </div>
-                        <a href="" class="callus"><span>Call us</span></a>
-                        <a href="" class="mailus"><span>Email us</span></a>
+                        <a href="callto:+380674614067" class="callus"><span>Call us</span></a>
+                        <a href="mailto:wewebrarium@gmail.com" class="mailus"><span>Email us</span></a>
                     </div>
                 </div>
             </div>
@@ -401,8 +401,8 @@
                         as in the next steps, it becomes clear where and how we are heading.<br>
                         <span class="form-txt-bot-mob">So let's get to know each other!</span>
                     </div>
-                    <a href="" class="mailus-mob"><span>Email us</span></a>
-                    <a href="" class="callus-mob"><span>Call us</span></a>
+                    <a href="mailto:wewebrarium@gmail.com" class="mailus-mob"><span>Email us</span></a>
+                    <a href="callto:+380674614067" class="callus-mob"><span>Call us</span></a>
                 </div>
             </div>
         </section>
@@ -416,9 +416,14 @@
                         © 2023 Webrarium. All right reserved.
                     </div>
                     <div class="f-nav">
-                        <a href="">work</a>
-                        <a href="">contact</a>
-                        <a href="">about</a>
+                        <a href="#work">work</a>
+                        <a href="#contacts">contact</a>
+                        <a href="#about">about</a>
+                    </div>
+                    <div class="f-nav-mob">
+                        <a href="#workmob">work</a>
+                        <a href="#contactsmob">contact</a>
+                        <a href="#aboutmob">about</a>
                     </div>
                     <div class="f-pages">
                         <a href="">Privacy Policy</a>
@@ -430,7 +435,9 @@
 
     </footer>
     <div class="cursor pc" id="cursor"><img src="static/mouse.webp" alt=""></div>
-    <!-- <script src="scripts.js"></script> -->
+    
+    
+    <!-- gsap animations -->
     <script>
         gsap.registerPlugin(ScrollTrigger);
         let mm = gsap.matchMedia();
@@ -533,6 +540,8 @@
             });
         })
     </script>
+
+    <!-- mouse leaf -->
     <script>
         // mouse
 
@@ -552,6 +561,8 @@
         cursor.classList.remove('click')
         });
     </script>
+
+    <!-- borges toggle -->
     <script>
         let toggles = document.querySelectorAll('.toggle-wrp');
         for (const toggle of toggles) {
@@ -560,6 +571,8 @@
             });
             }
     </script>
+
+    <!-- header hide on scroll down -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <script>
             // Hide Header on on scroll down
@@ -602,12 +615,16 @@
                 lastScrollTop = st;
             }
     </script>
+
+    <!-- overflow hidden for html -->
     <script>
         const html = document.querySelector("html");
         window.onresize = () => {
             html.style.overflowX = "hidden";
         }
     </script>
+
+    <!-- humburger -->
     <script>
         
         function brg() {
@@ -617,6 +634,8 @@
             hamburger.classList.toggle("open");
          }
     </script>
+
+    <!-- falling green blocks video sources -->
     <script>
         const mq = window.matchMedia( "(max-width: 850px)" );
         document.onreadystatechange = function(e)
