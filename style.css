@@ -837,11 +837,12 @@ footer {
     .getintouch {
         font-size: calc(1*var(--index));;
         border: 1px solid var(--main);
-        padding: 0 4%;
+        padding: 2% 4%;
         border-radius: 10vw;
         height: calc(3*var(--index));
         display: grid;
         place-items: center;
+        white-space: nowrap;
     }
     .brg {
         display: flex;
@@ -931,6 +932,7 @@ footer {
         max-width: 100%;
         filter: brightness(20%);
         object-fit: cover;
+        border-radius: 8px;
     }
     .work-card h3 {
         position: absolute;
