@@ -453,7 +453,11 @@ body {
     line-height: 17px;
 }
 
-
+.libra {
+    background: url(static/borges-libra.webp);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
 .partners {
     margin-bottom: -2px;
     padding: 10vh 0;
@@ -482,7 +486,7 @@ body {
 .partners-logos {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(5, calc(5*var(--index)));
+    grid-template-rows: repeat(4, calc(5*var(--index)));
     gap: 20px;
 }
 .partner-logo {
@@ -521,9 +525,6 @@ body {
 
 
 .about {
-    background: url(static/borges-libra.webp);
-    background-repeat: no-repeat;
-    background-size: 100%;
     position: relative;
     padding-bottom: 5vw;
 }
@@ -704,14 +705,13 @@ body {
 }
 
 footer {
-    background: var(--main);
-    padding: 5vh 0 3vh;
+    padding: 10vh 0 7vh;
 }
 .footer-wrp {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4vh;
+    gap: 10vh;
 }
 .f-logo {
     font-style: normal;
@@ -992,9 +992,7 @@ footer {
         padding: 0 10%;
         font-size: calc(2*var(--index));
     }
-    .partners-wrp .hid {
-        display: none;
-    }
+
     .partners-logos {
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: repeat(2, calc(5*var(--index)));
@@ -1003,10 +1001,13 @@ footer {
     .partner-logo img {
         max-width: 90%;
     }
-    .about-mob {
-        background-image: url(static/bottom-bg-mob.webp);
+    .libra {
+        background: url(static/bottom-bg-mob.webp);
         background-repeat: no-repeat;
         background-size: cover;
+
+    }
+    .about-mob {
         padding-bottom: calc(3*var(--index));
     }
     .about-mob h2 {
@@ -1045,7 +1046,7 @@ footer {
     }
     .form-txt-top-mob {
         font-size: calc(1.4*var(--index));
-        font-weight: 700;
+        font-weight: 600;
         margin-bottom: 20px;
     }
     .we {
@@ -1074,17 +1075,20 @@ footer {
         padding: 15px 0;
         border-radius: 10vh;
     }
+    .footer-wrp {
+        gap:5vh;
+    }
     .f-logo {
         font-size: calc(1.5*var(--index));
     }
     .f-bot {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
-        row-gap: 4vh;
+        row-gap: 5vh;
     }
     .f-nav-mob {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         gap: 10%;
         grid-area: 1 / 1 / 2 / 3;
     }
