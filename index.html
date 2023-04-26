@@ -44,17 +44,6 @@
 
     gtag('config', 'G-J8ZW4RCXNG');
     </script>
-    <!-- preloader -->
-    <script>
-        window.onload = function () {
-          window.setTimeout(function () {
-            document.body.classList.add('loaded');
-          }, 7000);
-          window.setTimeout(function () {
-            document.querySelector('.preloader').remove();
-          }, 7500);
-        }
-      </script>
 
 </head>
 
@@ -62,108 +51,6 @@
 
 <body>
 
-    <div class="preloader">
-        <div id="precontainer">
-            <span id='web'>WEBRARIUM</span>
-            <span id="text1"></span>
-            <span id="text2"></span>
-        </div>
-        
-        <svg id="filters">
-            <defs>
-                <filter id="threshold">
-                    <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
-                                            0 1 0 0 0
-                                            0 0 1 0 0
-                                            0 0 0 255 -140" />
-                </filter>
-            </defs>
-        </svg>
-    </div>
-      <script>
-        const elts = {
-            text1: document.getElementById("text1"),
-            text2: document.getElementById("text2")
-        };
-
-        const texts = [
-            "sites",
-            "are",
-            "born",
-            "here",
-        ];
-
-        const morphTime = 1;
-        const cooldownTime = 1;
-
-        let textIndex = texts.length - 1;
-        let time = new Date();
-        let morph = 0;
-        let cooldown = cooldownTime;
-
-        elts.text1.textContent = texts[textIndex % texts.length];
-        elts.text2.textContent = texts[(textIndex + 1) % texts.length];
-
-        function doMorph() {
-            morph -= cooldown;
-            cooldown = 0;
-
-            let fraction = morph / morphTime;
-
-            if (fraction > 1) {
-                cooldown = cooldownTime;
-                fraction = 1;
-            }
-
-            setMorph(fraction);
-        }
-
-        function setMorph(fraction) {
-            elts.text2.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
-            elts.text2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
-
-            fraction = 1 - fraction;
-            elts.text1.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
-            elts.text1.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
-
-            elts.text1.textContent = texts[textIndex % texts.length];
-            elts.text2.textContent = texts[(textIndex + 1) % texts.length];
-        }
-
-        function doCooldown() {
-            morph = 0;
-
-            elts.text2.style.filter = "";
-            elts.text2.style.opacity = "100%";
-
-            elts.text1.style.filter = "";
-            elts.text1.style.opacity = "0%";
-        }
-
-        function animate() {
-            requestAnimationFrame(animate);
-
-            let newTime = new Date();
-            let shouldIncrementIndex = cooldown > 0;
-            let dt = (newTime - time) / 1000;
-            time = newTime;
-
-            cooldown -= dt;
-
-            if (cooldown <= 0) {
-                if (shouldIncrementIndex) {
-                    textIndex++;
-                }
-
-                doMorph();
-            } else {
-                doCooldown();
-            }
-        }
-
-        animate();
-
-      </script>
     <header class="header pc">
         <div class="container">
             <div class="header-inner">
@@ -351,7 +238,7 @@
                             </div>
                             <div class="vb-link-wrp">
                                 <a href="https://vyshyti-bolem.in.ua/" target="_blank">
-                                    live version
+                                    <span>live version</span> 
                                     <img class="eye" src="static/eye.gif" alt="">
                                 </a>
                             </div>
@@ -370,7 +257,7 @@
                             </div>
                             <div class="project-link-wrp">
                                 <a href="https://www.100percentlife.clinic/" target="_blank">
-                                    live version
+                                    <span>live version</span> 
                                     <img class="eye" src="static/eye.gif" alt="">
                                 </a> 
                             </div>
@@ -393,7 +280,7 @@
                                 Media guide on how to effectively communicate about non-communicable diseases and healthy living.                                </div>
                             <div class="project-link-wrp">
                                 <a href="https://www.actforhealth.in.ua/mediaguide" target="_blank">
-                                    live version
+                                    <span>live version</span> 
                                     <img class="eye" src="static/eye.gif" alt="">
                                 </a> 
                             </div>
