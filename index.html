@@ -35,9 +35,135 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"
         integrity="sha512-AMl4wfwAmDM1lsQvVBBRHYENn1FR8cfOTpt8QVbb/P55mYOdahHD4LmHM1W55pNe3j/3od8ELzPf/8eNkkjISQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J8ZW4RCXNG"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-J8ZW4RCXNG');
+    </script>
+    <!-- preloader -->
+    <script>
+        window.onload = function () {
+          window.setTimeout(function () {
+            document.body.classList.add('loaded');
+          }, 7000);
+          window.setTimeout(function () {
+            document.querySelector('.preloader').remove();
+          }, 7500);
+        }
+      </script>
+
 </head>
 
+
+
 <body>
+
+    <div class="preloader">
+        <div id="precontainer">
+            <span id='web'>WEBRARIUM</span>
+            <span id="text1"></span>
+            <span id="text2"></span>
+        </div>
+        
+        <svg id="filters">
+            <defs>
+                <filter id="threshold">
+                    <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
+                                            0 1 0 0 0
+                                            0 0 1 0 0
+                                            0 0 0 255 -140" />
+                </filter>
+            </defs>
+        </svg>
+    </div>
+      <script>
+        const elts = {
+            text1: document.getElementById("text1"),
+            text2: document.getElementById("text2")
+        };
+
+        const texts = [
+            "sites",
+            "are",
+            "born",
+            "here",
+        ];
+
+        const morphTime = 1;
+        const cooldownTime = 1;
+
+        let textIndex = texts.length - 1;
+        let time = new Date();
+        let morph = 0;
+        let cooldown = cooldownTime;
+
+        elts.text1.textContent = texts[textIndex % texts.length];
+        elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+
+        function doMorph() {
+            morph -= cooldown;
+            cooldown = 0;
+
+            let fraction = morph / morphTime;
+
+            if (fraction > 1) {
+                cooldown = cooldownTime;
+                fraction = 1;
+            }
+
+            setMorph(fraction);
+        }
+
+        function setMorph(fraction) {
+            elts.text2.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+            elts.text2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+
+            fraction = 1 - fraction;
+            elts.text1.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+            elts.text1.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+
+            elts.text1.textContent = texts[textIndex % texts.length];
+            elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+        }
+
+        function doCooldown() {
+            morph = 0;
+
+            elts.text2.style.filter = "";
+            elts.text2.style.opacity = "100%";
+
+            elts.text1.style.filter = "";
+            elts.text1.style.opacity = "0%";
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            let newTime = new Date();
+            let shouldIncrementIndex = cooldown > 0;
+            let dt = (newTime - time) / 1000;
+            time = newTime;
+
+            cooldown -= dt;
+
+            if (cooldown <= 0) {
+                if (shouldIncrementIndex) {
+                    textIndex++;
+                }
+
+                doMorph();
+            } else {
+                doCooldown();
+            }
+        }
+
+        animate();
+
+      </script>
     <header class="header pc">
         <div class="container">
             <div class="header-inner">
@@ -125,244 +251,243 @@
             </div>
         </div>
     </header>
-    <!-- <main> -->
 
-        <section class="hero">
-            <video autoplay muted loop playsinline class="hero-video">
-                <source src="static/miow.webm" >
-                <source src="static/miow.mp4" >
-            </video>
-            <h1>Sites are born here</h1>
-        </section>
-        <section class="work-section pc" id="work">
-            <div class="r-line">
-                <div>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work&nbsp;</span>
-                </div>
-                <div>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work </span>
-                    <span>work&nbsp;</span>
-                </div>
+    <section class="hero">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="static/miow.webm" >
+            <source src="static/miow.mp4" >
+        </video>
+        <h1>Sites are born here</h1>
+    </section>
+    <section class="work-section pc" id="work">
+        <div class="r-line">
+            <div>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work&nbsp;</span>
+            </div>
+            <div>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work </span>
+                <span>work&nbsp;</span>
+            </div>
 
 
-            </div> 
-            <div class="container">
-                <div class="works">
-                    <div class="vb-wrp">
-                        <div class="vb-card">
-                            <div class="vb-video">
-                                <video autoplay="" muted="" loop="" playsinline no-controls="" playsinline="true">
-                                    <source src="static/ewp-video.MP4" type="video/webm">
-                                </video>
-                            </div>
-                            <div class="vb-card-info">
-                                <div class="vb-projectname">
-                                    Embroidered with pain
-                                </div>
-                                <div class="vb-logos">
-                                    <div><img src="static/vb-logo.svg" alt="vb-logo"></div>
-                                    <div><img src="static/vb-logo.svg" alt="vb-logo"></div>
-                                    <div><img src="static/vb-logo.svg" alt="vb-logo"></div>
-                                    <div><img src="static/vb-logo.svg" alt="vb-logo"></div>
-                                </div>
-                                <div class="vb-descr">
-                                    The project is dedicated to the psychological health of people who have suffered from sexual violence during russia's war against Ukraine.
-                                </div>
-                                <div class="cloth">
-                                    <img src="static/cloth.webp" alt="vb-cloth">
-                                </div>
-                                <div class="vb-link-wrp">
-                                    <a href="https://vyshyti-bolem.in.ua/" target="_blank">
-                                        live version
-                                        <img class="eye" src="static/eye.gif" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="projects-wrp">
-                        <div class="project-card percent">
-                            <div class="project-info">
-                                <div class="projectname">100% LIFE</div>
-                                <div class="project-logo">
-                                    <img src="static/100Life-logo.png" alt="100Life-logo">
-                                </div>
-                                <div class="project-descr">
-                                    Corporate site for the 100%LIFE network of clinics.
-                                </div>
-                                <div class="project-link-wrp">
-                                    <a href="https://www.100percentlife.clinic/" target="_blank">
-                                        live version
-                                        <img class="eye" src="static/eye.gif" alt="">
-                                    </a> 
-                                </div>
-                            </div>
-                            
-                            <video autoplay muted loop playsinline class="project-video">
-                                <source src="static/percent-video.mp4">
+        </div> 
+        <div class="container">
+            <div class="works">
+                <div class="vb-wrp">
+                    <div class="vb-card">
+                        <div class="vb-video">
+                            <video autoplay="" muted="" loop="" playsinline no-controls="" playsinline="true">
+                                <source src="static/ewp-video.MP4" type="video/webm">
                             </video>
-                            
                         </div>
-                        <div class="project-card afh">
-                            <div class="project-info">
-                                <div class="projectname">
-                                    Act for Health
-                                </div>
-                                <div class="project-logo">
-                                    <img src="static/AfH-logo.png" alt="AfH-logo">
-                                </div>
-                                <div class="project-descr">
-                                    Media guide on how to effectively communicate about non-communicable diseases and healthy living.                                </div>
-                                <div class="project-link-wrp">
-                                    <a href="https://www.actforhealth.in.ua/" target="_blank">
-                                        live version
-                                        <img class="eye" src="static/eye.gif" alt="">
-                                    </a> 
-                                </div>
+                        <div class="vb-card-info">
+                            <div class="vb-projectname">
+                                Embroidered with pain
                             </div>
-                            
-                            <video autoplay muted loop playsinline class="project-video">
-                                <source src="static/afh-video.mp4">
-                            </video>
-                            
+                            <div class="vb-logos">
+                                <div><img src="static/vb-logo.svg" alt="vb-logo"></div>
+                                <div><img src="static/vb-logo.svg" alt="vb-logo"></div>
+                                <div><img src="static/vb-logo.svg" alt="vb-logo"></div>
+                                <div><img src="static/vb-logo.svg" alt="vb-logo"></div>
+                            </div>
+                            <div class="vb-descr">
+                                The project is dedicated to the psychological health of people who have suffered from sexual violence during russia's war against Ukraine.
+                            </div>
+                            <div class="cloth">
+                                <img src="static/cloth.webp" alt="vb-cloth">
+                            </div>
+                            <div class="vb-link-wrp">
+                                <a href="https://vyshyti-bolem.in.ua/" target="_blank">
+                                    live version
+                                    <img class="eye" src="static/eye.gif" alt="">
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="dark-l"></div>
-            </div>
-        </section>
-        <section class="works mob" id="workmob">
-            <div class="works-slider-wrp">
-                <div class="work-card">
-                    <video autoplay muted loop playsinline class="project-video-mobile">
-                        <source src="static/vb-video.mp4">
-                    </video>
-                    <h3>
-                        Embroidered with pain
-                    </h3>
-                    <a href="https://vyshyti-bolem.in.ua/" target="_blank">live version
-                        <img src="static/eye.gif" alt="">
-                    </a>
-                </div>
-                <div class="work-card">
-                    <video autoplay muted loop playsinline class="project-video-mobile">
-                        <source src="static/afh-video.mp4">
-                    </video>
-                    <h3>
-                        Act for health
-                    </h3>
-                    <a href="https://www.actforhealth.in.ua/" target="_blank">live version
-                        <img src="static/eye.gif" alt="">
-                    </a>
-                </div>
-                <div class="work-card">
-                    <video autoplay muted loop playsinline class="project-video-mobile">
-                        <source src="static/percent-video.mp4">
-                    </video>
-                    <h3>
-                        100% life
-                    </h3>
-                    <a href="https://www.100percentlife.clinic/" target="_blank">live version
-                        <img src="static/eye.gif" alt="">
-                    </a>
-                </div>
-            </div>
-        
-        </section>
-        <section class="ben">
-            <div class="container">
-                <h2>
-                    We create and support the best technical solutions for website development and digital advertising campaigns
-                </h2>
-                <div class="stack">
-                    <div class="stack-logo"><img src="static/stack/Django.png" alt=""></div>
-                    <div class="stack-logo"><img src="static/stack/github.png" alt=""></div>
-                    <div class="stack-logo"><img src="static/stack/wordpress.png" alt=""></div>
-                    <div class="stack-logo"><img src="static/stack/webflow.png" alt=""></div>
-                    <div class="stack-logo"><img src="static/stack/figma.png" alt=""></div>
-                    <div class="stack-logo"><img src="static/stack/Git.png" alt=""></div>
-                    <div class="stack-logo">
-                        Technology is not the end goal of the product, so we <span>focus</span> on <span>user experience</span> and <span>business needs</span>.
+                <div class="projects-wrp">
+                    <div class="project-card percent">
+                        <div class="project-info">
+                            <div class="projectname">100% LIFE</div>
+                            <div class="project-logo">
+                                <img src="static/100Life-logo.png" alt="100Life-logo">
+                            </div>
+                            <div class="project-descr">
+                                Corporate site for the 100%LIFE network of clinics.
+                            </div>
+                            <div class="project-link-wrp">
+                                <a href="https://www.100percentlife.clinic/" target="_blank">
+                                    live version
+                                    <img class="eye" src="static/eye.gif" alt="">
+                                </a> 
+                            </div>
+                        </div>
+                        
+                        <video autoplay muted loop playsinline class="project-video">
+                            <source src="static/percent-video.mp4">
+                        </video>
+                        
+                    </div>
+                    <div class="project-card afh">
+                        <div class="project-info">
+                            <div class="projectname">
+                                Act for Health
+                            </div>
+                            <div class="project-logo">
+                                <img src="static/AfH-logo.png" alt="AfH-logo">
+                            </div>
+                            <div class="project-descr">
+                                Media guide on how to effectively communicate about non-communicable diseases and healthy living.                                </div>
+                            <div class="project-link-wrp">
+                                <a href="https://www.actforhealth.in.ua/mediaguide" target="_blank">
+                                    live version
+                                    <img class="eye" src="static/eye.gif" alt="">
+                                </a> 
+                            </div>
+                        </div>
+                        
+                        <video autoplay muted loop playsinline class="project-video">
+                            <source src="static/afh-video.mp4">
+                        </video>
+                        
                     </div>
                 </div>
             </div>
+            <div class="dark-l"></div>
+        </div>
+    </section>
+    <section class="works mob" id="workmob">
+        <div class="works-slider-wrp">
+            <div class="work-card">
+                <video autoplay muted loop playsinline class="project-video-mobile">
+                    <source src="static/vb-video.mp4">
+                </video>
+                <h3>
+                    Embroidered with pain
+                </h3>
+                <a href="https://vyshyti-bolem.in.ua/" target="_blank">live version
+                    <img src="static/eye.gif" alt="">
+                </a>
+            </div>
+            <div class="work-card">
+                <video autoplay muted loop playsinline class="project-video-mobile">
+                    <source src="static/afh-video.mp4">
+                </video>
+                <h3>
+                    Act for health
+                </h3>
+                <a href="https://www.actforhealth.in.ua/mediaguide" target="_blank">live version
+                    <img src="static/eye.gif" alt="">
+                </a>
+            </div>
+            <div class="work-card">
+                <video autoplay muted loop playsinline class="project-video-mobile">
+                    <source src="static/percent-video.mp4">
+                </video>
+                <h3>
+                    100% life
+                </h3>
+                <a href="https://www.100percentlife.clinic/" target="_blank">live version
+                    <img src="static/eye.gif" alt="">
+                </a>
+            </div>
+        </div>
+    
+    </section>
+    <section class="ben">
+        <div class="container">
+            <h2>
+                We create and support the best technical solutions for website development and digital advertising campaigns
+            </h2>
+            <div class="stack">
+                <div class="stack-logo"><img src="static/stack/Django.png" alt=""></div>
+                <div class="stack-logo"><img src="static/stack/github.png" alt=""></div>
+                <div class="stack-logo"><img src="static/stack/wordpress.png" alt=""></div>
+                <div class="stack-logo"><img src="static/stack/webflow.png" alt=""></div>
+                <div class="stack-logo"><img src="static/stack/figma.png" alt=""></div>
+                <div class="stack-logo"><img src="static/stack/Git.png" alt=""></div>
+                <div class="stack-logo">
+                    Technology is not the end goal of the product, so we <span>focus</span> on <span>user experience</span> and <span>business needs</span>.
+                </div>
+            </div>
+        </div>
 
-        </section>
-        <section class="partners">
-            <video autoplay muted loop playsinline class="video-bg">
-                <source src="static/fall-pc.mp4">
-            </video>
-            <div class="container">
-                <div class="partners-wrp">
-                    <h2>Here are some of our satisfied customers</h2>
-                    <div class="partners-logos">
-                        <div class="partner-logo"><img src="static/partners/100Life-logo.png" alt=""><span>&#128154;</span></div>
-                        <div class="partner-logo"><img src="static/partners/afh-logo.png" alt=""><span>&#128151;</span></div>
-                        <div class="partner-logo"><img src="static/partners/arterium-logo.png" alt=""><span style="color: red;">&#9829;</span></div>
-                        <div class="partner-logo"><img src="static/partners/GDSkills-logo.png" alt=""><span>&#128313;</span></div>
-                        <div class="partner-logo"><img src="static/partners/kmono-logo.png" alt=""><span>&#9995;</span></div>
-                        <div class="partner-logo"><img src="static/partners/UCLCR-logo.png" alt=""><span>&#128155;</span></div>
-                        <div class="partner-logo"><img src="static/partners/lvbs-logo.png" alt=""><span>&#127763;</span></div>
-                        <div class="partner-logo"><img src="static/partners/Moz-logo.png" alt=""><span>&#129505;</span></div>
-                    </div>
+    </section>
+    <section class="partners">
+        <video autoplay muted loop playsinline class="video-bg">
+            <source src="static/fall-pc.mp4">
+        </video>
+        <div class="container">
+            <div class="partners-wrp">
+                <h2>Here are some of our satisfied customers</h2>
+                <div class="partners-logos">
+                    <div class="partner-logo"><img src="static/partners/100Life-logo.png" alt=""><span>&#128154;</span></div>
+                    <div class="partner-logo"><img src="static/partners/afh-logo.png" alt=""><span>&#128151;</span></div>
+                    <div class="partner-logo"><img src="static/partners/arterium-logo.png" alt=""><span style="color: red;">&#9829;</span></div>
+                    <div class="partner-logo"><img src="static/partners/GDSkills-logo.png" alt=""><span>&#128313;</span></div>
+                    <div class="partner-logo"><img src="static/partners/kmono-logo.png" alt=""><span>&#9995;</span></div>
+                    <div class="partner-logo"><img src="static/partners/UCLCR-logo.png" alt=""><span>&#128155;</span></div>
+                    <div class="partner-logo"><img src="static/partners/lvbs-logo.png" alt=""><span>&#127763;</span></div>
+                    <div class="partner-logo"><img src="static/partners/Moz-logo.png" alt=""><span>&#129505;</span></div>
                 </div>
             </div>
-        </section>
-        
-        <div class="libra">
+        </div>
+    </section>
+    
+    <div class="libra">
         <section class="about pc" id="about">
             <img class="hands" src="static/hands.webp" alt="">
             <div class="container">
@@ -427,34 +552,33 @@
                 </div>
             </div>
         </section>
-    <!-- </main> -->
-    <footer>
-        <div class="container">
-            <div class="footer-wrp">
-                <a class="f-logo" href="">Webrarium</a>
-                <div class="f-bot">
-                    <div class="copyright">
-                        © 2023 Webrarium. All right reserved.
-                    </div>
-                    <div class="f-nav">
-                        <a href="#work">work</a>
-                        <a href="#contacts">contact</a>
-                        <a href="#about">about</a>
-                    </div>
-                    <div class="f-nav-mob">
-                        <a href="#workmob">work</a>
-                        <a href="#contactsmob">contact</a>
-                        <a href="#aboutmob">about</a>
-                    </div>
-                    <div class="f-pages">
-                        <a href="">Privacy Policy</a>
-                        <a href="">Terms & Conditions </a>
+        <footer>
+            <div class="container">
+                <div class="footer-wrp">
+                    <a class="f-logo" href="">Webrarium</a>
+                    <div class="f-bot">
+                        <div class="copyright">
+                            © 2023 Webrarium. All right reserved.
+                        </div>
+                        <div class="f-nav">
+                            <a href="#work">work</a>
+                            <a href="#contacts">contact</a>
+                            <a href="#about">about</a>
+                        </div>
+                        <div class="f-nav-mob">
+                            <a href="#workmob">work</a>
+                            <a href="#contactsmob">contact</a>
+                            <a href="#aboutmob">about</a>
+                        </div>
+                        <div class="f-pages">
+                            <a href="">Privacy Policy</a>
+                            <a href="">Terms & Conditions </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-    </footer>
+        </footer>
     </div>
     <div class="cursor pc" id="cursor"><img src="static/mouse.webp" alt=""></div>
     
