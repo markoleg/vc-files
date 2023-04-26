@@ -337,10 +337,8 @@ body {
 .vb-link-wrp a { 
     display: flex;
     align-items: center;
-    gap: 1vw;
     border: 1px solid var(--white);
     border-radius: 5vw;
-    padding-left: 10px;
 }
 .vb-link-wrp a span {
     padding: 15px 10px 15px 15px;
@@ -415,7 +413,6 @@ body {
 .project-link-wrp a {
     display: flex;
     align-items: center;
-    gap: 1vw;
     border: 1px solid var(--white);
     border-radius: 5vw;
 }
@@ -957,6 +954,7 @@ footer {
         border: 1px solid var(--white);
         border-radius: 10vw;
         padding-left: 15px;
+        font-size: 10px;
     }
     .work-card a img {
         border-radius: 10vw;
