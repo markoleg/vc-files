@@ -115,7 +115,7 @@ meter {
 
 * {
     font-family: 'Inter', sans-serif;
-    cursor: none;
+    cursor: none!important;
 }
 
 
@@ -340,6 +340,7 @@ body {
     align-items: center;
     border: 1px solid var(--white);
     border-radius: 5vw;
+    margin: 1vw 0;
 }
 .vb-link-wrp a span {
     padding: 15px 10px 15px 15px;
@@ -417,6 +418,7 @@ body {
     align-items: center;
     border: 1px solid var(--white);
     border-radius: 5vw;
+    margin: 1vw 0;
 }
 .project-link-wrp a span {
     padding: 15px 10px 15px 15px;
