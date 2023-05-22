@@ -196,6 +196,21 @@ body {
     gap: 10vw;
     margin-left: auto;
     color: var(--black);
+    font-weight: 500;
+}
+.pc nav a:hover {
+    text-decoration: underline;
+}
+.lang {
+    margin-left: 5vw;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    color: var(--black);
+    font-size: 14px;
+}
+.lang a:hover {
+    text-decoration: underline;
 }
 .header-mob {
     display: none;
