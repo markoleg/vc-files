@@ -1043,6 +1043,7 @@ footer {
     }
     .partner-logo img {
         max-width: 90%;
+        object-fit: contain;
     }
     .libra {
         background: url(static/bottom-bg-mob.webp);
@@ -1063,6 +1064,7 @@ footer {
     }
     .about-mob img {
         width: 100%;
+        margin-bottom: 20px;
     }
     .borges-mob {
         background-color: var(--main);
@@ -1072,7 +1074,7 @@ footer {
         font-weight: 700;
     }
     .borges-inner {
-       padding: calc(3*var(--index));
+       padding: calc(6*var(--index)) calc(2*var(--index));
        text-align: center;
     }
     .borges-inner img {
@@ -1087,7 +1089,7 @@ footer {
         border-radius: 8px;
         padding: calc(4.2*var(--index)) 10px 10px 10px;
         text-align: center;
-        margin-top: calc(3*var(--index));
+        margin-top: calc(10*var(--index));
         background-color: #00000091;
     }
     .form-txt-top-mob {
