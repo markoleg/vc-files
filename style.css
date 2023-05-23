@@ -220,6 +220,10 @@ body {
     display: none;
 }
 
+
+
+
+
 .hero {
     height: 100vh;
     position: relative;
@@ -771,6 +775,7 @@ footer {
 }
 .copyright {
     text-align: center;
+    font-size: 11px;
 }
 
 
@@ -908,7 +913,7 @@ footer {
     .brg.open span:nth-child(3) {
         transform: rotate(-45deg);
     }
-    .header-mob nav a{
+    .header-mob nav > a{
         font-size: calc(1.5*var(--index));
         height: auto;
         text-transform: uppercase;
@@ -930,6 +935,14 @@ footer {
     }
     .header-mob nav.nav-open {
         top:0
+    }
+    .header-mob .lang-mob {
+        color: var(--white);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
     }
     .hero {
         height: 85vh;
