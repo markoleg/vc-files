@@ -418,6 +418,7 @@ body {
 }
 .project-logo img {
     height: 3vw;
+    object-fit: contain;
 }
 .project-descr { grid-area: 2 / 1 / 3 / 3; 
     border-right: 1px solid var(--white);
@@ -1039,7 +1040,7 @@ footer {
     .about-mob {
         padding-bottom: calc(3*var(--index));
     }
-    .about-mob h2 {
+    .about-mob .about-mob-head {
         display: flex;
         flex-direction: column;
         gap: calc(2*var(--index));
