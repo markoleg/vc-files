@@ -114,10 +114,8 @@ meter {
 
 
 * {
-    font-family: 'Inter', sans-serif;
     cursor: none!important;
 }
-
 
 
 
@@ -136,6 +134,10 @@ body {
     background-color: var(--white);
     color: var(--white);
     overflow-x: hidden;
+    /* font-family: 'Inter', sans-serif; */
+    font-family: 'Craftwork Grotesk', sans-serif;
+
+
 }
 .mob {
     display: none;
@@ -204,10 +206,12 @@ body {
 .lang {
     margin-left: 5vw;
     display: flex;
-    flex-direction: column;
-    gap: 3px;
+    gap:15px;
     color: var(--black);
     font-size: 14px;
+    /* height: 100%;
+    align-items: flex-end;
+    align-self: flex-end; */
 }
 .lang a:hover {
     text-decoration: underline;
@@ -233,7 +237,7 @@ body {
     margin: 0 5%;
     bottom: 10vh;
     font-weight: 800;
-    font-size: 7vw;
+    font-size: 5vw;
     text-transform: uppercase;
 }
 
@@ -957,7 +961,7 @@ footer {
         object-fit: cover;
         border-radius: 8px;
     }
-    .work-card h3 {
+    .work-card .project-head {
         position: absolute;
         top: 0;
         bottom: 0;
