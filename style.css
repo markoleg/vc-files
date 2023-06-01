@@ -298,7 +298,7 @@ body {
 }
 .vb-card {
     display: grid;
-    grid-template-columns: 65% auto;
+    grid-template-columns: 66% auto;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0px 4px 20px 9px rgba(6, 6, 6, 0.46);
@@ -1161,5 +1161,5 @@ footer {
 
 
 .body-ua .hero h1{
-    font-size: 3vw;
+    font-size: 4vw;
 }
