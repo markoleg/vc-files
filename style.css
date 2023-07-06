@@ -113,9 +113,14 @@ meter {
 
 
 
-* {
-    cursor: none!important;
+body {
+    cursor: none;
 }
+a {
+    cursor: none;
+
+}
+
 
 
 
@@ -364,13 +369,14 @@ body {
     border: 1px solid var(--white);
     border-radius: 5vw;
     margin: 1vw 0;
-}
-.vb-link-wrp a span {
+    gap: 20px;
+    background-color: var(--white);
     padding: 15px 10px 15px 15px;
 }
-.eye {
-    border-radius: 5vw;
+.vb-link-wrp a span {
+    color: var(--main);
 }
+
 .projects-wrp {
     margin: 2vw 0 0;
     display: flex;
@@ -443,9 +449,12 @@ body {
     border: 1px solid var(--white);
     border-radius: 5vw;
     margin: 1vw 0;
+    gap: 20px;
+    background-color: var(--white);
+    padding: 15px 10px 15px 15px;
 }
 .project-link-wrp a span {
-    padding: 15px 10px 15px 15px;
+    color: var(--main);    
 }
 .project-card.afh .project-video  {
     height: 35vw;
@@ -833,9 +842,14 @@ footer {
 
 
 @media  (max-width:850px) {
-    * {
+    body {
         cursor: auto;
     }
+    a {
+        cursor: pointer;
+    
+    }
+    
     .pc {
         display: none;
     }
@@ -986,20 +1000,22 @@ footer {
         text-align: center;
         padding: 0 5%;
     }
-    .work-card a {
+    .work-card .mob-btn-wrp {
         position: absolute;
         bottom: 10%;
         display: flex;
         align-items: center;
+        justify-content: center;
         gap: 7px;
         border: 1px solid var(--white);
         border-radius: 10vw;
-        padding-left: 15px;
-        font-size: 10px;
+        padding: 15px;
+        font-size: 12px;
+        background-color: var(--white);
+        color: var(--black);
+        line-height: 100%;
     }
-    .work-card a img {
-        border-radius: 10vw;
-    }
+
     .ben {
         margin-top: -5vh;
         padding: 10vh 0 5vh;
