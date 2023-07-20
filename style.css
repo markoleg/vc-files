@@ -374,7 +374,7 @@ body {
     padding: 15px 10px 15px 15px;
 }
 .vb-link-wrp a span {
-    color: var(--main);
+    color: var(--black);
 }
 
 .projects-wrp {
@@ -445,7 +445,7 @@ body {
 }
 .project-link-wrp a {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     border: 1px solid var(--white);
     border-radius: 5vw;
     margin: 1vw 0;
@@ -454,7 +454,7 @@ body {
     padding: 15px 10px 15px 15px;
 }
 .project-link-wrp a span {
-    color: var(--main);    
+    color: var(--black);    
 }
 .project-card.afh .project-video  {
     height: 35vw;
@@ -1004,7 +1004,7 @@ footer {
         position: absolute;
         bottom: 10%;
         display: flex;
-        align-items: center;
+        align-items: flex-end;
         justify-content: center;
         gap: 7px;
         border: 1px solid var(--white);
