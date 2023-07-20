@@ -334,8 +334,7 @@
     </section>
     <section class="partners">
         <video autoplay muted loop playsinline class="video-bg">
-            <source src="static/fall-pc.mp4" media="screen and (min-device-width:851px)">
-            <source src="static/fall-mob.mp4" media="screen and (max-device-width:850px)">
+            <source src="static/fall-pc.mp4">
         </video>
         <div class="container">
             <div class="partners-wrp">
@@ -649,29 +648,6 @@
          }
     </script>
 
-    <!-- falling green blocks video sources -->
-    <!-- <script>
-        const mq = window.matchMedia( "(max-width: 850px)" );
-        document.onreadystatechange = function(e)
-            {
-                if (document.readyState === 'complete')
-                {
-                    if (mq.matches) {
-                        document.querySelector('.video-bg source').src = "static/fall-mob.mp4"
-                    }
-                }
-            };
-            window.onresize = () => {
-                if (mq.matches) {
-                        document.querySelector('.video-bg source').src = "static/fall-mob.mp4"
-                    }
-                else {
-                    document.querySelector('.video-bg source').src = "static/fall-pc.mp4"
-                }
-            }
-
-            
-    </script> -->
 </body>
 
 </html>
