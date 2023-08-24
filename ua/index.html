@@ -446,7 +446,6 @@
 
         </footer>
     </div>
-    <div class="cursor pc" id="cursor"><img src="/static/mouse.webp" alt=""></div>
     
     
     <!-- gsap animations -->
@@ -553,26 +552,6 @@
         })
     </script>
 
-    <!-- mouse leaf -->
-    <script>
-        // mouse
-
-        var cursor = document.getElementById('cursor');
-        document.addEventListener('mousemove', function(e){
-        var x = e.clientX;
-        var y = e.clientY;
-        cursor.style.left = x + 'px';
-        cursor.style.top = y + 'px';
-        });
-
-        // document.addEventListener('mousedown', function(){
-        // cursor.classList.add('click');
-        // });
-
-        // document.addEventListener('mouseup', function(){
-        // cursor.classList.remove('click')
-        // });
-    </script>
 
     <!-- borges toggle -->
     <script>
