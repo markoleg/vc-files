@@ -1159,3 +1159,163 @@ footer {
 .body-ua .hero h1{
     font-size: 4vw;
 }
+
+
+
+
+
+/* case studies */
+
+.case-study .container {
+    margin-inline: auto;
+    width: min(100% - 80px, 1795px);
+}
+.case-study {
+    margin-top: 120px;
+    font-size: 20px;
+}
+.cs-top-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    justify-items: center;
+}
+.cs-head {
+    color: black;
+}
+.cs-head h1 {
+    font-size: 2.2em;
+    font-style: normal;
+    font-weight: 700;
+    margin-bottom: 35px;
+}
+.cs-desc {
+    font-size: 1.2em;
+}
+b {
+    font-weight: 700;
+}
+@media (min-width: 1564px) {
+    .cs-img {
+        grid-area: 1 / 2 / 3 / 3;
+    }
+}
+
+.cs-img {
+    max-width: 560px;
+    width: 100%;
+}
+.cs-card {
+    background-color:#507A49;
+    border-radius: 20px;
+    padding: 40px;
+}
+.cs-card-title {
+    font-size: 1.2em;
+}
+.cs-card ol {
+    list-style: decimal;
+    list-style-position: inside;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.cs-res-section {
+    padding: 40px 0;
+    color: var(--black);
+}
+.cs-res-section h2 {
+    font-size: 2.2em;
+    font-weight: 700;
+}
+.cs-res-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin: 40px 0;
+}
+.cs-res-item h3 {
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.cs-res-item img {
+    max-height: 130px;
+}
+.cs-res-sum {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 40px;
+    row-gap: 20px;
+}
+.cs-res-sum p {
+    max-width: 800px;
+}
+.cs-res-sum-link {
+    display: flex;
+    align-items: center;
+}
+.cs-res-sum-link img {
+    max-width: 100px;
+}
+
+.inner-links {
+    margin: 40px 0;
+    color: var(--black);
+    font-size: 0.8em;
+}
+.inner-links-top {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.all-cases {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 24px;
+    border: 1px solid gray;
+    border-radius: 40px;
+    font-weight: 500;
+    text-wrap: nowrap;
+}
+.inner-links-top .line {
+    background: var(--black);
+    height: 1px;
+    width: 100%;
+}
+.inner-links-bottom {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+.case-link {
+    border: 1px solid var(--black);
+    padding: 30px;
+    border-radius: 20px;
+}
+@media (max-width: 978px) {
+    .case-study .container {
+        width: min(100% - 40px, 1795px);
+    }
+    .case-study {
+        font-size: 16px;
+    }
+    .cs-top-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .cs-card {
+        padding: 20px;
+    }
+    .inner-links-bottom {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
