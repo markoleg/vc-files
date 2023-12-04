@@ -190,33 +190,7 @@
 
     </main>
 
-    <footer>
-        <div class="container">
-            <div class="footer-wrp">
-                <a class="f-logo" href="">Webrarium</a>
-                <div class="f-bot">
-                    
-                    <div class="f-nav">
-                        <a href="#work">work</a>
-                        <a href="#contacts">contact</a>
-                        <a href="#about">about</a>
-                    </div>
-                    <div class="f-nav-mob">
-                        <a href="#workmob">work</a>
-                        <a href="#contactsmob">contact</a>
-                        <a href="#aboutmob">about</a>
-                    </div>
-                    <div class="f-pages">
-                        <!-- <a href="">Privacy Policy</a>
-                        <a href="">Terms & Conditions </a> -->
-                    </div>
-                    <div class="copyright">
-                        © 2023 Webrarium. All right reserved.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+
     <!-- header hide on scroll down -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <script>
@@ -260,6 +234,15 @@
                 lastScrollTop = st;
             }
     </script>
-    
+        <!-- humburger -->
+        <script>
+        
+            function brg() {
+                let nav = document.querySelector(".header-mob nav");
+                let hamburger = document.querySelector(".brg")
+                nav.classList.toggle("nav-open");
+                hamburger.classList.toggle("open");
+             }
+        </script>
 </body>
 </html>
