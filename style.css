@@ -1189,7 +1189,7 @@ footer {
     font-size: 2.2em;
     font-style: normal;
     font-weight: 700;
-    margin-bottom: 35px;
+    margin-bottom: 0.8em;
 }
 .cs-desc {
     font-size: 1.2em;
@@ -1264,7 +1264,6 @@ b {
 }
 
 .inner-links {
-    margin: 40px 0;
     color: var(--black);
     font-size: 0.8em;
 }
@@ -1305,6 +1304,7 @@ b {
     }
     .case-study {
         font-size: 16px;
+        margin-top: 90px;
     }
     .cs-top-grid {
         display: flex;
@@ -1317,5 +1317,8 @@ b {
     .inner-links-bottom {
         flex-direction: column;
         gap: 20px;
+    }
+    .case-link {
+        padding: 20px;
     }
 }
