@@ -1174,6 +1174,11 @@ footer {
     margin-top: 120px;
     font-size: 20px;
 }
+.breadcrumbs {
+    color: var(--black);
+    font-size: 0.8em;
+    margin-bottom: 1em;
+}
 .cs-top-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1241,11 +1246,18 @@ b {
     gap: 40px;
     margin: 40px 0;
 }
+.cs-res-item-num {
+    font-size: 4em;
+    font-weight: 700;
+}
+.cs-res-item-num img{
+    max-height: 4.4rem;
+}
 .cs-res-item h3 {
     font-weight: 700;
     margin-bottom: 20px;
 }
-.cs-res-item img {
+.cs-res-item > img {
     max-height: 130px;
 }
 .cs-res-sum {
@@ -1266,12 +1278,12 @@ b {
     max-width: 100px;
 }
 
-.inner-links {
+.cs-inner-links {
     color: var(--black);
     font-size: 0.8em;
     margin-bottom: 40px;
 }
-.inner-links-top {
+.cs-inner-links-top {
     display: flex;
     gap: 20px;
     align-items: center;
@@ -1287,12 +1299,12 @@ b {
     text-wrap: nowrap;
     white-space: nowrap;
 }
-.inner-links-top .line {
+.cs-inner-links-top .line {
     background: var(--black);
     height: 1px;
     width: 100%;
 }
-.inner-links-bottom {
+.cs-inner-links-bottom {
     margin-top: 40px;
     display: flex;
     justify-content: space-between;
@@ -1302,6 +1314,11 @@ b {
     border: 1px solid var(--black);
     padding: 30px;
     border-radius: 20px;
+    transition: all .2s ease;
+}
+.case-link:hover {
+    background-color: var(--main);
+    color: var(--white);
 }
 @media (max-width: 978px) {
     .case-study .container {
@@ -1318,10 +1335,10 @@ b {
     .cs-card {
         padding: 20px;
     }
-    .cs-res-item img {
+    .cs-res-item > img {
         max-width: 100px;
     }
-    .inner-links-bottom {
+    .cs-inner-links-bottom {
         flex-direction: column;
         gap: 20px;
     }
