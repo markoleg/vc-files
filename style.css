@@ -1184,6 +1184,9 @@ footer {
 }
 .cs-head {
     color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .cs-head h1 {
     font-size: 2.2em;
@@ -1266,6 +1269,7 @@ b {
 .inner-links {
     color: var(--black);
     font-size: 0.8em;
+    margin-bottom: 40px;
 }
 .inner-links-top {
     display: flex;
@@ -1281,6 +1285,7 @@ b {
     border-radius: 40px;
     font-weight: 500;
     text-wrap: nowrap;
+    white-space: nowrap;
 }
 .inner-links-top .line {
     background: var(--black);
@@ -1304,7 +1309,6 @@ b {
     }
     .case-study {
         font-size: 16px;
-        margin-top: 90px;
     }
     .cs-top-grid {
         display: flex;
@@ -1313,6 +1317,9 @@ b {
     }
     .cs-card {
         padding: 20px;
+    }
+    .cs-res-item img {
+        max-width: 100px;
     }
     .inner-links-bottom {
         flex-direction: column;
