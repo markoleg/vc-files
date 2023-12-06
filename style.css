@@ -194,7 +194,7 @@ body {
 .pc nav {
     display: inline-flex;
     justify-content: flex-end;
-    gap: 10vw;
+    gap: 6vw;
     margin-left: auto;
     color: var(--black);
     font-weight: 500;
@@ -1252,7 +1252,7 @@ b {
     margin: 40px 0;
 }
 .cs-res-item-num {
-    font-size: 4em;
+    font-size: 3.7em;
     font-weight: 700;
 }
 .cs-res-item-num img{
@@ -1280,7 +1280,7 @@ b {
     align-items: center;
 }
 .cs-res-sum-link img {
-    max-width: 100px;
+    max-width: 70px;
 }
 
 .cs-inner-links {
