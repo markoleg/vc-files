@@ -1212,8 +1212,12 @@ b {
 }
 
 .cs-img {
-    max-width: 560px;
+    place-self: center;
+    object-fit: cover;
+    border-radius: 20px;
+    height: 100%;
     width: 100%;
+    aspect-ratio: 2/1;
 }
 .cs-card {
     background-color:#507A49;
@@ -1222,14 +1226,15 @@ b {
 }
 .cs-card-title {
     font-size: 1.2em;
+    margin-bottom: 20px;
 }
+
 .cs-card ol {
     list-style: decimal;
     list-style-position: inside;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    margin-top: 20px;
 }
 
 .cs-res-section {
@@ -1307,7 +1312,6 @@ b {
 .cs-inner-links-bottom {
     margin-top: 40px;
     display: flex;
-    justify-content: space-between;
     gap: 40px;
 }
 .case-link {
@@ -1320,6 +1324,15 @@ b {
     background-color: var(--main);
     color: var(--white);
 }
+
+.summ100 {
+    font-size: 1.6em;
+    font-weight: 700;
+    color: var(--black);
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+}
 @media (max-width: 978px) {
     .case-study .container {
         width: min(100% - 40px, 1795px);
@@ -1331,6 +1344,7 @@ b {
         display: flex;
         flex-direction: column;
         gap: 20px;
+        align-items: flex-start;
     }
     .cs-card {
         padding: 20px;
