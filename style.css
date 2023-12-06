@@ -1272,7 +1272,6 @@ b {
 }
 .cs-res-sum {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     column-gap: 40px;
     row-gap: 20px;
@@ -1344,6 +1343,11 @@ b {
     }
     .case-study {
         font-size: 16px;
+        margin-top: var(--headerheight);
+        padding-top: 20px;
+    }
+    .cs-head h1 {
+        font-size: 1.5em;
     }
     .cs-top-grid {
         display: flex;
