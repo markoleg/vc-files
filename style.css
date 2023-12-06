@@ -1255,7 +1255,6 @@ b {
     font-size: 3.7em;
     font-weight: 700;
     display: flex;
-    flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 10px;
     align-items: center;
@@ -1273,6 +1272,7 @@ b {
 .cs-res-sum {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     column-gap: 40px;
     row-gap: 20px;
 }
