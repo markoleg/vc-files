@@ -1247,16 +1247,21 @@ b {
 }
 .cs-res-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 40px;
     margin: 40px 0;
 }
 .cs-res-item-num {
     font-size: 3.7em;
     font-weight: 700;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: center;
 }
 .cs-res-item-num img{
-    max-height: 4.4rem;
+    max-height: 4rem;
 }
 .cs-res-item h3 {
     font-weight: 700;
@@ -1280,7 +1285,7 @@ b {
     align-items: center;
 }
 .cs-res-sum-link img {
-    max-width: 70px;
+    max-width: 55px;
 }
 
 .cs-inner-links {
