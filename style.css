@@ -1205,7 +1205,7 @@ footer {
 b {
     font-weight: 700;
 }
-@media (min-width: 1564px) {
+@media (min-width: 1064px) {
     .cs-img {
         grid-area: 1 / 2 / 3 / 3;
     }
